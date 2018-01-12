@@ -1,16 +1,22 @@
 <template>
-  <div>
-    <navbar></navbar>
-    <div :class="{'App--hidden': visible}">
-      <nuxt/>
-    </div>
+  <div class="app">
+    <n-navbar/>
+    <!-- <div :class="{'App--hidden': visible}"> -->
+    <nuxt/>
+    <!-- </div> -->
+    <n-footer/>
   </div>
 </template>
 
 <script>
-import Navbar from '~/components/Header.vue'
+import nNavbar from '@/components/items/navbar.vue'
+import nFooter from '@/components/items/footer.vue'
 
 export default {
+  components: {
+    nNavbar,
+    nFooter
+  },
   watch: {
     $route: 'setStore'
   },
@@ -46,20 +52,9 @@ export default {
       htmlAttrs: { lang: this.$store.state.locale },
       link
     }
-  },
-  components: {
-    Navbar
   }
 }
 </script>
 
-<style lang="scss" scoped>
-.App {
-  &--hidden {
-    display: none;
-    @media (min-width: 992px) {
-      display: block;
-    }
-  }
-}
+<style lang="scss">
 </style>

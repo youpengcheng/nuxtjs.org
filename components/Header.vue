@@ -1,19 +1,24 @@
 <template>
   <header class="Header">
-    <nuxt-link class="Header__Logo" to="/">
-      <img src="~static/logo_nav.png" alt="Nuxt" />
-      <h1 class="Header__Logo__Text">NUXT</h1>
-    </nuxt-link>
-    <div class="Header__Toggler">
+    <n-container>
+      <nuxt-link class="Header__Logo" to="/">
+        <!-- <img src="~static/logo_nav.png" alt="Nuxt" /> -->
+        <n-logo/>
+        <h1 class="Header__Logo__Text">NUXT</h1>
+      </nuxt-link>
+    <!-- <div class="Header__Toggler">
       <div class="Header__Toggler__Button" @click="toggle">
         <div :class="{'icon menu': !visible, 'icon close': visible}"></div>
       </div>
     </div>
-    <nuxt-header-nav/>
+    <nuxt-header-nav/> -->
+    </n-container>
   </header>
 </template>
 
 <script>
+import nLogo from '~/components/svg/nuxtjs.vue'
+import nContainer from '~/components/layers/container.vue'
 import NuxtHeaderNav from '~/components/HeaderNav.vue'
 
 export default {
@@ -24,7 +29,9 @@ export default {
     toggle() { this.$store.commit('toggle', 'visibleHeader') }
   },
   components: {
-    NuxtHeaderNav
+    NuxtHeaderNav,
+    nLogo,
+    nContainer
   }
 }
 </script>

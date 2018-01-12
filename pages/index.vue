@@ -21,18 +21,15 @@
         </li>
       </ul>
     </section>
-    <nuxt-footer/>
   </div>
 </template>
 
 <script>
 import NuxtLogo from '~/components/VueToNuxtLogo.vue'
-import NuxtFooter from '~/components/Footer.vue'
 
 export default {
   components: {
-    NuxtLogo,
-    NuxtFooter
+    NuxtLogo
   },
   head() {
     return {
