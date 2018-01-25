@@ -1,32 +1,22 @@
 # nuxtjs.org
 
-Universal Vue.js Application built with [Nuxt.js](https://github.com/nuxt/nuxt.js).
+> My magnificent Nuxt.js project
 
-# zh.nuxtjs.org
+## Build Setup
 
-Nuxt.js 官网 [nuxtjs.org](https://nuxtjs.org) 的简体中文版，由[凹凸实验室](https://aotu.io)负责翻译整理。
+``` bash
+# install dependencies
+$ npm install
 
-欢迎关注我们的微信公众号（微信里面搜`凹凸实验室`），关于 Nuxt.js 的最新信息会通过公众号发布。
+# serve with hot reload at localhost:3000
+$ npm run dev
 
-Chinese translation of primary Nuxt.js documentation site. Supported by [AOTU Labs](https://aotu.io).
+# build for production and launch server
+$ npm run build
+$ npm start
 
-# Developing
-
-First, you need to setup the docs api server, see [https://github.com/nuxt/docs](https://github.com/nuxt/docs).
-
-Update your `/etc/hosts` to have the following lines:
-
-```
-127.0.0.1       nuxt
-127.0.0.1       ja.nuxt
-127.0.0.1       ko.nuxt
-127.0.0.1       ru.nuxt
-127.0.0.1       zh.nuxt
+# generate static project
+$ npm run generate
 ```
 
-Then on another tab, start a dev server on `http://nuxt:3000`
-
-```bash
-npm install
-npm run dev
-```
+For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).

@@ -1,0 +1,24 @@
+/* icon font path, required */
+$--font-path: "../node_modules/element-ui/lib/theme-chalk/fonts";
+
+/* colors */
+$--color-primary: #2498a7;
+
+$--color-success: #67c23a !default;
+$--color-warning: #eb9e05 !default;
+$--color-danger: #fa5555 !default;
+$--color-info: #878d99 !default;
+
+$color_nuxt_silver: #F5F7FA;
+$color_nuxt_green: #3D8070;
+$color_vue_green: #47B784;
+$color_vue_blue: #36495D;
+
+$color_silver: #DAE1E9;
+$color_black: #152538;
+$color_soft_grey: darken($color_silver, 30%);
+$color_soft_black: darken($color_silver, 50%);
+
+/* sizes */
+$topbar_height: 64px;
+$navbar_height: 56px;
