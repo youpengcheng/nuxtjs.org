@@ -22,19 +22,20 @@ module.exports = {
     '@nuxtjs/axios',
     "@nuxtjs/google-analytics",
     "@nuxtjs/proxy",
-    "@nuxtjs/pwa",
-    "@nuxtjs/sentry"
+    "@nuxtjs/pwa"
+    // "@nuxtjs/sentry"
   ],
   axios: {
+    baseURL: 'http://localhost:3000/v1'
     // See https://github.com/nuxt-community/axios-module#options
   },
   'google-analytics': {
     id: 'UA-88662854-1'
   },
   proxy: {
-    '/api': {
+    '/v1': {
       target: (process.env.NODE_ENV === 'production') ? 'https://docs.api.nuxtjs.org' : 'http://localhost:4000',
-      pathRewrite: { '^/api': '' }
+      pathRewrite: { '^/v1': '' }
     }
   },
   sentry: {
