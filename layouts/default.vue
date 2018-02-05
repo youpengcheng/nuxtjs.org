@@ -1,5 +1,6 @@
 <template>
   <div>
+    <n-topbar/>
     <el-menu default-active="0" class="el-menu-demo" mode="horizontal">
       <el-submenu index="0">
         <template slot="title">{{ t('learn') }}</template>
@@ -39,12 +40,14 @@
 </template>
 
 <script>
+import nTopbar from '~/components/partials/topbar.vue'
 import nFooter from '~/components/partials/footer.vue'
 
 import { mapGetters } from 'vuex'
 
 export default {
   components: {
+    nTopbar,
     nFooter
   },
   computed: {

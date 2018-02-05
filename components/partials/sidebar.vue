@@ -28,10 +28,12 @@
     width: 100%;
     padding: 0 10px;
     background-color: rgba(255, 255, 255, 0.5);
+    @media (min-width: 768px) {
+      padding: 0 15px;
+    }
     @media (min-width: 992px) {
       float: right;
       width: 300px;
-      padding: 0 15px;
     }
   }
 }
