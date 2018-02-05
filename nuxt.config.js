@@ -21,12 +21,12 @@ module.exports = {
   modules: [
     '@nuxtjs/axios',
     "@nuxtjs/google-analytics",
-    "@nuxtjs/proxy",
     "@nuxtjs/pwa"
     // "@nuxtjs/sentry"
   ],
   axios: {
-    baseURL: 'http://localhost:3000/v1'
+    proxy: true,
+    prefix: '/v1'
     // See https://github.com/nuxt-community/axios-module#options
   },
   'google-analytics': {
@@ -38,11 +38,11 @@ module.exports = {
       pathRewrite: { '^/v1': '' }
     }
   },
-  sentry: {
-    project_id: process.env.SENTRY_PROJECT_ID,
-    public_key: process.env.SENTRY_PUBLIC_KEY,
-    private_key: process.env.SENTRY_PRIVATE_KEY
-  },
+  // sentry: {
+  //   project_id: process.env.SENTRY_PROJECT_ID,
+  //   public_key: process.env.SENTRY_PUBLIC_KEY,
+  //   private_key: process.env.SENTRY_PRIVATE_KEY
+  // },
   build: {
     extend(config, ctx) {
       // Run ESLint on save

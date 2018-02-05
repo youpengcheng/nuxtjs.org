@@ -1,18 +1,20 @@
 <template>
   <div>
-    <header>header</header>
-    <nav>navigation</nav>
+    <n-header/>
+    <n-navbar/>
     <nuxt-child/>
   </div>
 </template>
 
 <script>
-// import Logo from '~/components/Logo.vue'
+import nHeader from '~/components/partials/header.vue'
+import nNavbar from '~/components/partials/navbar.vue'
 
 export default {
-  // components: {
-  //   Logo
-  // }
+  components: {
+    nHeader,
+    nNavbar
+  }
 }
 </script>
 

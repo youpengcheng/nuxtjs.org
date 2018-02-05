@@ -1,11 +1,11 @@
 <template>
-  <div class="container">
+  <div class="nContainer">
     <slot/>
   </div>
 </template>
 
 <style lang="scss">
-.container {
+.nContainer {
   width: 100%;
   margin: 0 auto;
   padding: 0 10px;
