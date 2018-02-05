@@ -1,19 +1,19 @@
 <template>
   <div>
-    <n-sidebar/>
+    <n-aside/>
     <pre>{{ attrs }}</pre>
     <article v-if="$route.params.article">{{ body }}</article>
   </div>
 </template>
 
 <script>
-import nSidebar from '~/components/partials/sidebar.vue'
+import nAside from '~/components/partials/aside.vue'
 
 import { mapGetters } from 'vuex'
 
 export default {
   components: {
-    nSidebar
+    nAside
   },
   async asyncData({ app, params, store, error }) {
     if (params.article) {
