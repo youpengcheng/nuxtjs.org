@@ -21,6 +21,7 @@ export default {
 
 .nFooter {
   background-color: #fff;
-  box-shadow: 0 -1px 1px $color_silver;
+  border-top: 1px solid $color_silver;
+  // box-shadow: 0 -1px 1px $color_silver;
 }
 </style>

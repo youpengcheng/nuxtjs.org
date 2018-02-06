@@ -23,7 +23,7 @@ export default {
 .nNavbar {
   height: 64px;
   background-color: #fff;
-  box-shadow: 0 1px 1px $color_silver;
-  // border-bottom: 1px solid $color_silver;
+  // box-shadow: 0 1px 1px $color_silver;
+  border-bottom: 1px solid $color_silver;
 }
 </style>

@@ -1,19 +1,29 @@
 <template>
-  <div>
-    <n-aside/>
-    <pre>{{ attrs }}</pre>
-    <article v-if="$route.params.article">{{ body }}</article>
+  <div class="nArea" :class="{'nArea--splitted': $route.params.article}">
+    <n-container>
+      <div class="nArea__Left">
+        <n-aside/>
+      </div>
+      <div class="nArea__Right" v-if="$route.params.article">
+        <!-- <pre>{{ attrs }}</pre> -->
+        <n-article>{{ body }}</n-article>
+      </div>
+    </n-container>
   </div>
 </template>
 
 <script>
+import nContainer from '~/components/globals/container.vue'
 import nAside from '~/components/partials/aside.vue'
+import nArticle from '~/components/partials/article.vue'
 
 import { mapGetters } from 'vuex'
 
 export default {
   components: {
-    nAside
+    nContainer,
+    nAside,
+    nArticle
   },
   async asyncData({ app, params, store, error }) {
     if (params.article) {
@@ -63,4 +73,34 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~assets/variables';
+
+.nArea {
+  background-color: $color_vue_blue;
+  &__Left {
+    width: 300px;
+    float: left;
+  }
+  &__Right {
+    overflow: hidden;
+  }
+  &--splitted {
+    background-color: $color_nuxt_silver;
+    .nArea__Left {
+      display: none;
+    }
+    @media (min-width: 992px) {
+      background: linear-gradient(90deg, $color_vue_blue 60%, $color_nuxt_silver 61%);
+      .nArea__Left {
+        display: block;
+      }
+    }
+  }
+  // @media (min-width: 992px) {
+  //   max-width: 992px;
+  // }
+  // @media (min-width: 1200px) {
+  //   max-width: 1200px;
+  // }
+}
 </style>
