@@ -1,17 +1,31 @@
 <template>
   <aside class="nAside">
-    <ul class="nAside__Menu">
-      <li>
-        Test
-      </li>
-    </ul>
+    <div class="nAside__Group" v-for="group in menu.links" :key="group.title">
+      <p>{{ group.title }}</p>
+      <ul class="nAside__Group__Menu">
+        <li v-for="link in group.links" :key="link.name">
+          <nuxt-link :to="`/${$route.params.section}${link.to}`">{{ link.name }}</nuxt-link>
+        </li>
+      </ul>
+    </div>
   </aside>
 </template>
+
+<script>
+export default {
+  computed: {
+    menu () {
+      return this.$store.getters.get('menu')[this.$route.params.section]
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 @import '~assets/variables';
 
 .nAside {
+  color: #fff;
   width: 100%;
   padding: 20px 0;
   @media (min-width: 992px) {
@@ -19,12 +33,50 @@
     padding: 30px 0;
     width: 300px;
   }
-  &__Menu {
-    list-style: none;
-    padding: 0;
-    li {
-      font-size: 15px;
-      color: $color_nuxt_silver;
+  &__Group {
+    p {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: lighten($color_vue_blue, 50%);
+    }
+    &__Menu {
+      list-style: none;
+      padding: 10px 0;
+      padding-bottom: 30px;
+      li {
+        padding: 4px 0;
+        a {
+          position: relative;
+          display: inline-block;
+          font-size: 15px;
+          padding: 3px 0;
+          text-decoration: none;
+          color: $color_nuxt_silver;
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            border-bottom: 1px solid #fff;
+            transition: 0.4s;
+          }
+          &:hover {
+            color: #fff;
+            &:after {
+              width: 100%;
+            }
+          }
+        }
+        .nuxt-link-exact-active {
+          color: #fff;
+          &:after {
+            width: 100%;
+          }
+        }
+      }
     }
   }
 }

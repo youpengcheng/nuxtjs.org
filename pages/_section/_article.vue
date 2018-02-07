@@ -76,13 +76,16 @@ export default {
 @import '~assets/variables';
 
 .nArea {
+  display: flex;
   background-color: $color_vue_blue;
+  .nContainer {
+    display: flex;
+  }
   &__Left {
     width: 300px;
-    float: left;
   }
   &__Right {
-    overflow: hidden;
+    background-color: $color_nuxt_silver;
   }
   &--splitted {
     background-color: $color_nuxt_silver;

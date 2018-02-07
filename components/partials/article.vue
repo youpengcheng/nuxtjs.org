@@ -9,7 +9,6 @@
 
 .nArticle {
   padding: 20px 0;
-  background-color: $color_nuxt_silver;
   @media (min-width: 992px) {
     padding: 30px 0;
     padding-left: 30px;

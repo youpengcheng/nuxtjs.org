@@ -1,8 +1,8 @@
 <template>
   <header class="nHeader">
     <n-container>
-      <h1>Title</h1>
-      <p>Description</p>
+      <h1>{{ menu.title }}</h1>
+      <p>{{ menu.description }}</p>
     </n-container>
   </header>
 </template>
@@ -13,6 +13,11 @@ import nContainer from '~/components/globals/container.vue'
 export default {
   components: {
     nContainer
+  },
+  computed: {
+    menu () {
+      return this.$store.getters.get('menu')[this.$route.params.section]
+    }
   }
 }
 </script>
