@@ -1,0 +1,50 @@
+img {
+  max-width: 100%;
+  display: inline-block;
+}
+h2 {
+  padding: 30px 0;
+  font-size: 32px;
+  font-weight: 300;
+  color: $color_nuxt_green;
+}
+a {
+  font-weight: 600;
+  color: $color_vue_green;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+p {
+  font-size: 15px;
+  line-height: 26px;
+  padding-bottom: 5px;
+}
+strong, b {
+  font-weight: 600;
+  color: $color_soft_black;
+}
+blockquote {
+  color: $color_soft_grey;
+}
+ul {
+  padding-left: 20px;
+  padding-bottom: 10px;
+  list-style: none;
+  li {
+    padding: 3px 0;
+    line-height: normal;
+    &:before {
+      content: "";
+      border-color: transparent $color_vue_blue;;
+      border-style: solid;
+      border-width: 0.35em 0 0.35em 0.45em;
+      display: block;
+      height: 0;
+      width: 0;
+      left: -1.2em;
+      top: 1em;
+      position: relative;
+    }
+  }
+}

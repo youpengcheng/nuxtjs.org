@@ -1,12 +1,14 @@
 <template>
   <div class="nArea" :class="{'nArea--splitted': $route.params.article}">
     <n-container>
-      <div class="nArea__Left">
-        <n-aside/>
-      </div>
-      <div class="nArea__Right" v-if="$route.params.article">
-        <!-- <pre>{{ attrs }}</pre> -->
-        <n-article>{{ body }}</n-article>
+      <div class="nArea__Content">
+        <div class="nArea__Content__Left">
+          <n-aside/>
+        </div>
+        <div class="nArea__Content__Right" v-if="$route.params.article">
+          <!-- <pre>{{ attrs }}</pre> -->
+          <n-article :content="body"/>
+        </div>
       </div>
     </n-container>
   </div>
@@ -78,23 +80,24 @@ export default {
 .nArea {
   display: flex;
   background-color: $color_vue_blue;
-  .nContainer {
+  &__Content {
+    width: 100%;
     display: flex;
-  }
-  &__Left {
-    width: 300px;
-  }
-  &__Right {
-    background-color: $color_nuxt_silver;
+    &__Left {
+      flex-basis: 300px;
+    }
+    &__Right {
+      background-color: $color_nuxt_silver;
+    }
   }
   &--splitted {
     background-color: $color_nuxt_silver;
-    .nArea__Left {
+    .nArea__Content__Left {
       display: none;
     }
     @media (min-width: 992px) {
       background: linear-gradient(90deg, $color_vue_blue 60%, $color_nuxt_silver 61%);
-      .nArea__Left {
+      .nArea__Content__Left {
         display: block;
       }
     }
