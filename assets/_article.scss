@@ -28,23 +28,22 @@ blockquote {
   color: $color_soft_grey;
 }
 ul {
-  padding-left: 20px;
+  padding-left: 15px;
   padding-bottom: 10px;
   list-style: none;
   li {
-    padding: 3px 0;
+    padding: 4px 0;
     line-height: normal;
     &:before {
-      content: "";
-      border-color: transparent $color_vue_blue;;
-      border-style: solid;
-      border-width: 0.35em 0 0.35em 0.45em;
-      display: block;
-      height: 0;
+      content: " ";
       width: 0;
-      left: -1.2em;
-      top: 1em;
+      height: 0;
+      top: -11px;
+      left: -14px;
       position: relative;
+      border-bottom: 7px solid $color_nuxt_green;
+      border-right: 4px solid transparent;
+      border-left: 4px solid transparent;
     }
   }
 }
