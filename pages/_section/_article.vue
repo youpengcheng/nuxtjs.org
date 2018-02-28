@@ -79,7 +79,7 @@ export default {
 
 .nArea {
   display: flex;
-  background-color: $color_vue_blue;
+  // background-color: $color_vue_blue;
   &__Content {
     width: 100%;
     display: flex;
@@ -87,16 +87,16 @@ export default {
       flex-basis: 300px;
     }
     &__Right {
-      background-color: $color_nuxt_silver;
+      // background-color: $color_nuxt_silver;
     }
   }
   &--splitted {
-    background-color: $color_nuxt_silver;
+    // background-color: $color_nuxt_silver;
     .nArea__Content__Left {
       display: none;
     }
     @media (min-width: 992px) {
-      background: linear-gradient(90deg, $color_vue_blue 60%, $color_nuxt_silver 61%);
+      // background: linear-gradient(90deg, $color_vue_blue 60%, $color_nuxt_silver 61%);
       .nArea__Content__Left {
         display: block;
       }

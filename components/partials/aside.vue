@@ -31,7 +31,7 @@ export default {
   @media (min-width: 992px) {
     float: left;
     padding: 30px 0;
-    width: 300px;
+    width: 240px;
   }
   &__Group {
     p {
@@ -39,7 +39,7 @@ export default {
       font-weight: 500;
       letter-spacing: 0.5px;
       text-transform: uppercase;
-      color: lighten($color_vue_blue, 50%);
+      color: lighten($color_vue_blue, 30%);
     }
     &__Menu {
       list-style: none;
@@ -53,7 +53,7 @@ export default {
           font-size: 15px;
           padding: 3px 0;
           text-decoration: none;
-          color: $color_nuxt_silver;
+          color: lighten($color_vue_blue, 10%);
           &:after {
             content: '';
             position: absolute;
@@ -64,14 +64,14 @@ export default {
             transition: 0.4s;
           }
           &:hover {
-            color: #fff;
+            color: $color_vue_green;
             &:after {
               width: 100%;
             }
           }
         }
         .nuxt-link-exact-active {
-          color: #fff;
+          color: $color_vue_green;
           &:after {
             width: 100%;
           }

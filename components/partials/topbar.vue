@@ -96,8 +96,14 @@ export default {
 @import '~assets/variables';
 
 .nTopbar {
-  height: 64px;
+  height: 76px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
   background-color: #fff;
+  box-shadow: 0 10px 40px 0 rgba(62,57,107,0.07), 0 2px 9px 0 rgba(62,57,107,0.06);
   &__Menu {
     height: 64px;
     float: right;
