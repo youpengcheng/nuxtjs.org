@@ -1,7 +1,7 @@
 <template>
   <div>
     <n-header/>
-    <n-navbar/>
+    <!-- <n-navbar/> -->
     <nuxt-child/>
   </div>
 </template>
