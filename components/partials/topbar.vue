@@ -52,22 +52,23 @@ export default {
   box-shadow: 0 10px 40px 0 rgba(62,57,107,0.07), 0 2px 9px 0 rgba(62,57,107,0.06);
   &__Logo {
     display: block;
-    margin-top: 10px;
+    margin-top: 12px;
     padding: 5px 0;
     float: left;
     .NuxtJS {
-      height: 34px;
+      height: 38px;
     }
   }
   &__Menu {
-    height: 64px;
+    height: 76px;
     float: right;
     list-style: none;
     li {
       float: left;
       padding-left: 45px;
-      padding-top: 23px;
-      height: 64px;
+      // padding-top: 23px;
+      height: 76px;
+      line-height: 76px;
       a {
         cursor: pointer;
         color: $color_vue_blue;
