@@ -104,7 +104,6 @@ export default {
   box-shadow: 0 0 10px $color_silver;
   &__Logo, &__Toggle, &__Icons {
     display: flex;
-    padding-top: 3px;
     cursor: pointer;
     justify-content: center;
     align-items: center;
@@ -246,7 +245,6 @@ export default {
     &__Logo, &__Logo--hidden {
       width: auto;
       flex-grow: 0;
-      padding-top: 0;
     }
     &__Menu {
       flex-grow: 1;
@@ -265,7 +263,7 @@ export default {
         &__Item {
           font-size: 13px;
           transform: none;
-          padding-top: 5px;
+          padding-top: 3px;
           color: $color_vue_blue;
           &:not(:last-child) {
             margin-bottom: 0;
