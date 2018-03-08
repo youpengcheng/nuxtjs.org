@@ -13,7 +13,7 @@
       </ul>
     </div>
     <div class="nNavbar__Search" :class="{'nNavbar__Search--open': showSearch}">
-      <input type="text" class="nNavbar__Search__Input" placeholder="Search">
+      <input type="text" class="nNavbar__Search__Input" name="search" id="algolia" placeholder="Search"/>
     </div>
     <div class="nNavbar__Icons">
       <a class="nNavbar__Icons__Link" href="#" @click.prevent="showSearch = !showSearch">
@@ -34,6 +34,11 @@ import nIconSearch from '@/components/icons/search'
 import nIconTwitter from '@/components/icons/twitter'
 import nIconGithub from '@/components/icons/github'
 
+let scriptInjected = false
+let callbacks = []
+let onScriptLoaded = (cb) => callbacks.push(cb)
+let scriptLoaded = () => callbacks.forEach((cb) => cb())
+
 export default {
   components: {
     nLogo,
@@ -43,10 +48,40 @@ export default {
     nIconTwitter,
     nIconGithub
   },
+  mounted() {
+    onScriptLoaded(() => this.addInstantSearch())
+    if (scriptInjected) return
+    // Load JS
+    const script = document.createElement('script')
+    script.setAttribute('type', 'text/javascript')
+    script.setAttribute('src', '//cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js')
+    document.getElementsByTagName('body')[0].appendChild(script)
+    script.onload = scriptLoaded
+    // Load CSS
+    var link = document.createElement('link')
+    link.setAttribute('rel', 'stylesheet')
+    link.setAttribute('type', 'text/css')
+    link.setAttribute('href', 'https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css')
+    document.getElementsByTagName('body')[0].appendChild(link)
+    scriptInjected = true
+  },
   data () {
     return {
       showMenu: false,
       showSearch: false
+    }
+  },
+  methods: {
+    addInstantSearch() {
+      window.docsearch({
+        apiKey: 'ff80fbf046ce827f64f06e16f82f1401',
+        // apiKey: process.env.docSearchApiKey,
+        indexName: 'nuxtjs',
+        inputSelector: '#algolia',
+        algoliaOptions: { 'facetFilters': ['tags:en'] },
+        // algoliaOptions: { 'facetFilters': [`tags:${this.$store.state.locale}`] },
+        debug: true // Set debug to true if you want to inspect the dropdown
+      })
     }
   }
 }
@@ -111,6 +146,7 @@ export default {
     right: 0;
     left: 0;
     bottom: 0;
+    z-index: 999;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -164,7 +200,6 @@ export default {
     overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
     transition-property: width, flex-grow;
     transition-duration: 0.5s;
     transition-timing-function: ease-in-out;
@@ -183,6 +218,7 @@ export default {
     &--open {
       flex-grow: 1;
       width: 100%;
+      overflow: visible;
       .nNavbar__Logo, .nNavbar__Toggle {
         display: none;
       }
