@@ -13,6 +13,7 @@ module.exports = {
   },
   loading: { color: '#3B8070' },
   css: [
+    'normalize.css',
     '@/assets/style.scss'
   ],
   plugins: [

@@ -1,7 +1,7 @@
 <template>
   <div class="nNavbar">
-    <div class="nNavbar__Toggle" @click="showMenu = true"><n-icon-menu/></div>
-    <div class="nNavbar__Logo"><nuxt-link to="/"><n-logo/></nuxt-link></div>
+    <div class="nNavbar__Toggle" :class="{'nNavbar__Toggle--hidden': showSearch}" @click="showMenu = true"><n-icon-menu/></div>
+    <div class="nNavbar__Logo" :class="{'nNavbar__Logo--hidden': showSearch}"><nuxt-link to="/"><n-logo/></nuxt-link></div>
     <div class="nNavbar__Menu" :class="{'nNavbar__Menu--open': showMenu}">
       <div class="nNavbar__Menu__Toggle" @click="showMenu = false"><n-icon-x/></div>
       <ul class="nNavbar__Menu__List">
@@ -12,8 +12,14 @@
         <li class="nNavbar__Menu__List__Item">Translations</li>
       </ul>
     </div>
+    <div class="nNavbar__Search" :class="{'nNavbar__Search--open': showSearch}">
+      <input type="text" class="nNavbar__Search__Input" placeholder="Search">
+    </div>
     <div class="nNavbar__Icons">
-      <a class="nNavbar__Icons__Link" href="#"><n-icon-search/></a>
+      <a class="nNavbar__Icons__Link" href="#" @click.prevent="showSearch = !showSearch">
+        <n-icon-x v-if="showSearch"/>
+        <n-icon-search v-else/>
+      </a>
       <a class="nNavbar__Icons__Link" href="https://twitter.com/nuxt_js" target="_blank"><n-icon-twitter/></a>
       <a class="nNavbar__Icons__Link" href="https://github.com/nuxt" target="_blank"><n-icon-github/></a>
     </div>
@@ -39,7 +45,8 @@ export default {
   },
   data () {
     return {
-      showMenu: false
+      showMenu: false,
+      showSearch: false
     }
   }
 }
@@ -67,13 +74,23 @@ export default {
     justify-content: center;
     align-items: center;
   }
-  &__Toggle, &__Toggle:active, &__Toggle:visited {
+  &__Toggle {
+    width: 20px;
     color: $color_vue_blue;
+    transition-property: width;
+    transition-duration: 0.5s;
     &:hover {
       color: $color_vue_green;
     }
+    &--hidden {
+      width: 0;
+    }
   }
   &__Logo {
+    flex-grow: 1;
+    width: 100%;
+    transition-property: width, flex-grow;
+    transition-duration: 0.5s;
     a {
       width: 100px;
       height: 32px;
@@ -82,6 +99,9 @@ export default {
       .NuxtJS {
         height: 32px;
       }
+    }
+    &--hidden {
+      width: 0;
     }
   }
   &__Menu {
@@ -139,10 +159,40 @@ export default {
       }
     }
   }
+  &__Search {
+    width: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    transition-property: width, flex-grow;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    &__Input {
+      display: block;
+      height: 34px;
+      font-size: 16px;
+      color: $color_vue_silver;
+      background-color: $color_nuxt_silver;
+      border: none;
+      border-radius: 34px;
+      width: 100%;
+      padding: 0 17px;
+      outline: none;
+    }
+    &--open {
+      flex-grow: 1;
+      width: 100%;
+      .nNavbar__Logo, .nNavbar__Toggle {
+        display: none;
+      }
+    }
+  }
   &__Icons {
-    padding-top: 5px;
     &__Link, &__Link:active, &__Link:visited {
       display: block;
+      padding-top: 5px;
+      margin-left: 20px;
       color: $color_vue_blue;
       &:hover {
         color: $color_vue_green;
@@ -157,10 +207,14 @@ export default {
     &__Toggle {
       display: none;
     }
-    &__Logo {
+    &__Logo, &__Logo--hidden {
+      width: auto;
+      flex-grow: 0;
       padding-top: 0;
     }
     &__Menu {
+      flex-grow: 1;
+      justify-content: flex-start;
       position: relative;
       background: #fff;
       transform: none;
@@ -184,20 +238,17 @@ export default {
         }
       }
     }
+    &__Search {
+      &__Input {
+        height: 40px;
+      }
+    }
     &__Icons {
-      flex-grow: 1;
       justify-content: flex-end;
       &__Link {
         &:nth-child(2), &:nth-child(3) {
           display: block;
         }
-        &:not(:last-child) {
-          margin-right: 20px;
-        }
-        // .Icon {
-        //   height: 20px;
-        //   width: 20px;
-        // }
       }
     }
   }
