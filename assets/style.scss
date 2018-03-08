@@ -10,7 +10,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  color: $color_vue_blue;
+  color: $color_vue_black;
   background-color: #fff;
   // background-color: $color_nuxt_silver;
 }
@@ -20,4 +20,23 @@ html {
 }
 a {
   text-decoration: none;
+}
+
+.Icon {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (min-width: 576px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
 }
