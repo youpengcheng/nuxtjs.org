@@ -74,12 +74,10 @@ export default {
   methods: {
     addInstantSearch() {
       window.docsearch({
-        apiKey: 'ff80fbf046ce827f64f06e16f82f1401',
-        // apiKey: process.env.docSearchApiKey,
+        apiKey: process.env.docSearchApiKey,
         indexName: 'nuxtjs',
         inputSelector: '#algolia',
-        algoliaOptions: { 'facetFilters': ['tags:en'] },
-        // algoliaOptions: { 'facetFilters': [`tags:${this.$store.state.locale}`] },
+        algoliaOptions: { 'facetFilters': [`tags:${this.$store.getters.get('locale')}`] },
         debug: true // Set debug to true if you want to inspect the dropdown
       })
     }
@@ -267,7 +265,7 @@ export default {
           color: $color_vue_blue;
           &:not(:last-child) {
             margin-bottom: 0;
-            margin-right: 30px;
+            margin-right: 40px;
           }
         }
       }
