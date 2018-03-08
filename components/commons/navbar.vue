@@ -22,8 +22,8 @@
 
 <script>
 import nLogo from '~/components/svg/nuxtjs.vue'
-import nIconX from '@/components/icons/x'
-import nIconMenu from '@/components/icons/menu'
+import nIconX from '@/components/icons/times'
+import nIconMenu from '@/components/icons/bars'
 import nIconSearch from '@/components/icons/search'
 import nIconTwitter from '@/components/icons/twitter'
 import nIconGithub from '@/components/icons/github'
@@ -62,6 +62,7 @@ export default {
   box-shadow: 0 0 10px $color_silver;
   &__Logo, &__Toggle, &__Icons {
     display: flex;
+    padding-top: 3px;
     cursor: pointer;
     justify-content: center;
     align-items: center;
@@ -74,12 +75,12 @@ export default {
   }
   &__Logo {
     a {
-      width: 120px;
-      height: 36px;
+      width: 100px;
+      height: 32px;
       overflow: hidden;
       display: block;
       .NuxtJS {
-        height: 36px;
+        height: 32px;
       }
     }
   }
@@ -112,7 +113,7 @@ export default {
       flex-direction: column;
       &__Item {
         color: #fff;
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 500;
         letter-spacing: 0.5px;
         text-transform: uppercase;
@@ -139,6 +140,7 @@ export default {
     }
   }
   &__Icons {
+    padding-top: 5px;
     &__Link, &__Link:active, &__Link:visited {
       display: block;
       color: $color_vue_blue;
@@ -155,6 +157,9 @@ export default {
     &__Toggle {
       display: none;
     }
+    &__Logo {
+      padding-top: 0;
+    }
     &__Menu {
       position: relative;
       background: #fff;
@@ -168,7 +173,7 @@ export default {
         align-items: center;
         flex-direction: row;
         &__Item {
-          font-size: 14px;
+          font-size: 13px;
           transform: none;
           padding-top: 5px;
           color: $color_vue_blue;
@@ -181,7 +186,6 @@ export default {
     }
     &__Icons {
       flex-grow: 1;
-      padding-top: 5px;
       justify-content: flex-end;
       &__Link {
         &:nth-child(2), &:nth-child(3) {
@@ -190,6 +194,10 @@ export default {
         &:not(:last-child) {
           margin-right: 20px;
         }
+        // .Icon {
+        //   height: 20px;
+        //   width: 20px;
+        // }
       }
     }
   }
