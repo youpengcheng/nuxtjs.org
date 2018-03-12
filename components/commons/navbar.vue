@@ -1,7 +1,20 @@
 <template>
   <div class="nNavbar">
     <div class="nNavbar__Toggle" :class="{'nNavbar__Toggle--hidden': showSearch}" @click="showMenu = true"><n-icon-menu/></div>
-    <div class="nNavbar__Logo" :class="{'nNavbar__Logo--hidden': showSearch}"><nuxt-link to="/"><n-logo/></nuxt-link></div>
+    <div class="nNavbar__Logo" :class="{'nNavbar__Logo--hidden': showSearch}">
+      <nuxt-link to="/"><n-logo/></nuxt-link>
+    </div>
+    <div class="nNavbar__Icons">
+      <a class="nNavbar__Icons__Link" href="https://github.com/nuxt" target="_blank"><n-icon-github/></a>
+      <a class="nNavbar__Icons__Link" href="https://twitter.com/nuxt_js" target="_blank"><n-icon-twitter/></a>
+      <a class="nNavbar__Icons__Link" href="#" @click.prevent="showSearch = !showSearch">
+        <n-icon-x v-if="showSearch"/>
+        <n-icon-search v-else/>
+      </a>
+    </div>
+    <div class="nNavbar__Search" :class="{'nNavbar__Search--open': showSearch}">
+      <input type="text" class="nNavbar__Search__Input" name="search" id="algolia" placeholder="Search"/>
+    </div>
     <div class="nNavbar__Menu" :class="{'nNavbar__Menu--open': showMenu}">
       <div class="nNavbar__Menu__Toggle" @click="showMenu = false"><n-icon-x/></div>
       <ul class="nNavbar__Menu__List">
@@ -11,17 +24,6 @@
         <li class="nNavbar__Menu__List__Item">Ecosystem</li>
         <li class="nNavbar__Menu__List__Item">Translations</li>
       </ul>
-    </div>
-    <div class="nNavbar__Search" :class="{'nNavbar__Search--open': showSearch}">
-      <input type="text" class="nNavbar__Search__Input" name="search" id="algolia" placeholder="Search"/>
-    </div>
-    <div class="nNavbar__Icons">
-      <a class="nNavbar__Icons__Link" href="#" @click.prevent="showSearch = !showSearch">
-        <n-icon-x v-if="showSearch"/>
-        <n-icon-search v-else/>
-      </a>
-      <a class="nNavbar__Icons__Link" href="https://twitter.com/nuxt_js" target="_blank"><n-icon-twitter/></a>
-      <a class="nNavbar__Icons__Link" href="https://github.com/nuxt" target="_blank"><n-icon-github/></a>
     </div>
   </div>
 </template>
@@ -92,6 +94,7 @@ export default {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 990;
   display: flex;
   justify-content: space-between;
   position: fixed;
@@ -124,12 +127,12 @@ export default {
     transition-property: width, flex-grow;
     transition-duration: 0.5s;
     a {
-      width: 100px;
-      height: 32px;
+      width: 115px;
+      height: 30px;
       overflow: hidden;
       display: block;
       .NuxtJS {
-        height: 32px;
+        height: 28px;
       }
     }
     &--hidden {
@@ -208,13 +211,19 @@ export default {
       background-color: $color_nuxt_silver;
       border: none;
       border-radius: 34px;
+      box-shadow: 0 0 1px $color_silver inset;
       width: 100%;
       padding: 0 17px;
       outline: none;
+      &::placeholder {
+        font-size: 14px;
+        color: $color_vue_silver;
+      }
     }
     &--open {
       flex-grow: 1;
       width: 100%;
+      padding-left: 20px;
       overflow: visible;
       .nNavbar__Logo, .nNavbar__Toggle {
         display: none;
@@ -225,12 +234,11 @@ export default {
     &__Link, &__Link:active, &__Link:visited {
       display: block;
       padding-top: 5px;
-      margin-left: 20px;
       color: $color_vue_blue;
       &:hover {
         color: $color_vue_green;
       }
-      &:nth-child(2), &:nth-child(3) { display: none; }
+      &:nth-child(1), &:nth-child(2) { display: none; }
     }
   }
   @media (min-width: 992px) {
@@ -243,14 +251,15 @@ export default {
     &__Logo, &__Logo--hidden {
       width: auto;
       flex-grow: 0;
+      padding-right: 40px;
     }
     &__Menu {
       flex-grow: 1;
-      justify-content: flex-start;
+      justify-content: flex-end;
       position: relative;
       background: #fff;
       transform: none;
-      padding: 0 30px;
+      // padding: 0 30px;
       &__Toggle {
         display: none;
       }
@@ -259,10 +268,16 @@ export default {
         align-items: center;
         flex-direction: row;
         &__Item {
-          font-size: 13px;
+          // font-weight: 400;
+          font-size: 14px;
           transform: none;
           padding-top: 3px;
+          text-transform: none;
+          cursor: pointer;
           color: $color_vue_blue;
+          &:hover {
+            color: $color_vue_green;
+          }
           &:not(:last-child) {
             margin-bottom: 0;
             margin-right: 40px;
@@ -274,11 +289,17 @@ export default {
       &__Input {
         height: 40px;
       }
+      &--open {
+        padding-left: 0;
+        padding-right: 20px;
+      }
     }
     &__Icons {
-      justify-content: flex-end;
+      padding-top: 3px;
+      // justify-content: flex-start;
       &__Link {
-        &:nth-child(2), &:nth-child(3) {
+        margin-right: 20px;
+        &:nth-child(1), &:nth-child(2) {
           display: block;
         }
       }
