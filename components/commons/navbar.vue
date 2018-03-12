@@ -18,10 +18,18 @@
     <div class="nNavbar__Menu" :class="{'nNavbar__Menu--open': showMenu}">
       <div class="nNavbar__Menu__Toggle" @click="showMenu = false"><n-icon-x/></div>
       <ul class="nNavbar__Menu__List">
-        <li class="nNavbar__Menu__List__Item">Guide</li>
-        <li class="nNavbar__Menu__List__Item">API</li>
-        <li class="nNavbar__Menu__List__Item">Resources</li>
-        <li class="nNavbar__Menu__List__Item">Ecosystem</li>
+        <li class="nNavbar__Menu__List__Item">
+          <nuxt-link to="/guide">Guide</nuxt-link>
+        </li>
+        <li class="nNavbar__Menu__List__Item">
+          <nuxt-link to="/api">API</nuxt-link>
+        </li>
+        <li class="nNavbar__Menu__List__Item">
+          <nuxt-link to="/resources">Resources</nuxt-link>
+        </li>
+        <li class="nNavbar__Menu__List__Item">
+          <nuxt-link to="/ecosystem">Ecosystem</nuxt-link>
+        </li>
         <li class="nNavbar__Menu__List__Item" @click="showTranslations = true">Translations</li>
       </ul>
     </div>
@@ -114,7 +122,7 @@ export default {
   padding: 0 20px;
   color: $color_vue_black;
   background: #fff;
-  box-shadow: 0 0 10px $color_silver;
+  box-shadow: 0 0 5px $color_silver;
   &__Logo, &__Toggle, &__Icons {
     display: flex;
     justify-content: center;
@@ -193,6 +201,15 @@ export default {
         transition-property: transform;
         transition-duration: 0.3s;
         transition-timing-function: ease-in-out;
+        a {
+          color: #fff;
+          &:hover {
+            color: $color_vue_green;
+          }
+        }
+        &:hover, .nuxt-link-active {
+          color: $color_vue_green;
+        }
         &:nth-child(1) { transition-delay: 0.2s; }
         &:nth-child(2) { transition-delay: 0.3s; }
         &:nth-child(3) { transition-delay: 0.4s; }
@@ -351,8 +368,8 @@ export default {
           text-transform: none;
           cursor: pointer;
           color: $color_vue_blue;
-          &:hover {
-            color: $color_vue_green;
+          a {
+            color: $color_vue_blue;
           }
           &:not(:last-child) {
             margin-bottom: 0;

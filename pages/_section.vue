@@ -1,6 +1,6 @@
 <template>
   <div>
-    <n-header/>
+    <!-- <n-header/> -->
     <!-- <n-navbar/> -->
     <nuxt-child/>
   </div>

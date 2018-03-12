@@ -1,16 +1,13 @@
 <template>
   <div class="nArea" :class="{'nArea--splitted': $route.params.article}">
-    <n-container>
-      <div class="nArea__Content">
-        <div class="nArea__Content__Left">
-          <n-aside/>
-        </div>
-        <div class="nArea__Content__Right" v-if="$route.params.article">
-          <!-- <pre>{{ attrs }}</pre> -->
-          <n-article :content="body"/>
-        </div>
+    <div class="nArea__Content">
+      <div class="nArea__Content__Left">
+        <n-aside/>
       </div>
-    </n-container>
+      <div class="nArea__Content__Right" v-if="$route.params.article">
+        <n-article :content="body"/>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -84,9 +81,25 @@ export default {
     width: 100%;
     display: flex;
     &__Left {
-      flex-basis: 300px;
+      width: 300px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      padding: 0 30px;
+      padding-top: 72px;
+      overflow-y: scroll;
+      display: none;
+      box-shadow: 0 0 10px $color_silver inset;
+      background-color: $color_nuxt_silver;
+      @media (min-width: 992px) {
+        display: block;
+      }
     }
     &__Right {
+      @media (min-width: 992px) {
+        margin: 0 300px;
+      }
       // background-color: $color_nuxt_silver;
     }
   }

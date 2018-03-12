@@ -60,18 +60,18 @@ export default {
             bottom: 0;
             left: 0;
             width: 0%;
-            border-bottom: 1px solid #fff;
+            border-bottom: 2px solid $color_vue_green;
             transition: 0.4s;
           }
           &:hover {
-            color: $color_vue_green;
+            // color: $color_vue_green;
             &:after {
               width: 100%;
             }
           }
         }
         .nuxt-link-exact-active {
-          color: $color_vue_green;
+          // color: $color_vue_green;
           &:after {
             width: 100%;
           }

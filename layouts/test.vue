@@ -1,16 +1,24 @@
 <template>
   <div>
-    <n-navbar/>
+    <n-topbar/>
     <nuxt/>
+    <n-footer/>
   </div>
 </template>
 
 <script>
-import nNavbar from '@/components/commons/navbar'
+import nTopbar from '~/components/partials/topbar.vue'
+import nFooter from '~/components/partials/footer.vue'
+
+import { mapGetters } from 'vuex'
 
 export default {
   components: {
-    nNavbar
+    nTopbar,
+    nFooter
+  },
+  computed: {
+    ...mapGetters(['t'])
   }
 }
 </script>

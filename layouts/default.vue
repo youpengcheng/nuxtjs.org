@@ -1,27 +1,25 @@
 <template>
-  <div>
-    <n-topbar/>
+  <div class="nApp">
+    <n-navbar/>
     <nuxt/>
-    <n-footer/>
   </div>
 </template>
 
 <script>
-import nTopbar from '~/components/partials/topbar.vue'
-import nFooter from '~/components/partials/footer.vue'
-
-import { mapGetters } from 'vuex'
+import nNavbar from '@/components/commons/navbar'
 
 export default {
   components: {
-    nTopbar,
-    nFooter
-  },
-  computed: {
-    ...mapGetters(['t'])
+    nNavbar
   }
 }
 </script>
 
 <style lang="scss">
+.nApp {
+  padding-top: 64px;
+  @media (min-width: 992px) {
+    padding-top: 72px;
+  }
+}
 </style>

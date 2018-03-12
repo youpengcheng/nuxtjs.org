@@ -49,11 +49,19 @@ export default {
 
 .nArticle {
   width: 100%;
-  padding: 20px 0;
-  @media (min-width: 992px) {
-    padding: 30px 0;
-    padding-left: 30px;
-  }
+  padding: 30px;
+  // @media (min-width: 992px) {
+  //   max-width: 500px;
+  // }
+  // @media (min-width: 1200px) {
+  //   max-width: 700px;
+  // }
+  // @media (min-width: 992px) {
+  //   max-width: 992px;
+  // }
+  // @media (min-width: 1200px) {
+  //   max-width: 1200px;
+  // }
   @import '~assets/article';
 }
 </style>
