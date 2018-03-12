@@ -189,7 +189,6 @@ export default {
         font-weight: 500;
         cursor: pointer;
         letter-spacing: 0.5px;
-        // text-transform: uppercase;
         transform: translateX(-500px);
         transition-property: transform;
         transition-duration: 0.3s;
@@ -336,7 +335,7 @@ export default {
       position: relative;
       background: #fff;
       transform: none;
-      // padding: 0 30px;
+      padding-left: 30px;
       &__Toggle {
         display: none;
       }
@@ -368,7 +367,6 @@ export default {
       }
       &--open {
         padding-left: 0;
-        padding-right: 20px;
       }
     }
     &__Icons {
