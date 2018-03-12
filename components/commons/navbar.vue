@@ -22,7 +22,18 @@
         <li class="nNavbar__Menu__List__Item">API</li>
         <li class="nNavbar__Menu__List__Item">Resources</li>
         <li class="nNavbar__Menu__List__Item">Ecosystem</li>
-        <li class="nNavbar__Menu__List__Item">Translations</li>
+        <li class="nNavbar__Menu__List__Item" @click="showTranslations = true">Translations</li>
+      </ul>
+    </div>
+    <div class="nNavbar__Translations" :class="{'nNavbar__Translations--open': showTranslations}">
+      <div class="nNavbar__Translations__Toggle" @click="showTranslations = false"><n-icon-x/></div>
+      <ul class="nNavbar__Translations__List">
+        <li class="nNavbar__Translations__List__Item">English</li>
+        <li class="nNavbar__Translations__List__Item">Français</li>
+        <li class="nNavbar__Translations__List__Item">English</li>
+        <li class="nNavbar__Translations__List__Item">Français</li>
+        <li class="nNavbar__Translations__List__Item">English</li>
+        <li class="nNavbar__Translations__List__Item">Français</li>
       </ul>
     </div>
   </div>
@@ -70,6 +81,7 @@ export default {
   data () {
     return {
       showMenu: false,
+      showTranslations: false,
       showSearch: false
     }
   },
@@ -105,12 +117,12 @@ export default {
   box-shadow: 0 0 10px $color_silver;
   &__Logo, &__Toggle, &__Icons {
     display: flex;
-    cursor: pointer;
     justify-content: center;
     align-items: center;
   }
   &__Toggle {
     width: 20px;
+    cursor: pointer;
     color: $color_vue_blue;
     transition-property: width;
     transition-duration: 0.5s;
@@ -128,11 +140,11 @@ export default {
     transition-duration: 0.5s;
     a {
       width: 115px;
-      height: 30px;
+      height: 28px;
       overflow: hidden;
       display: block;
       .NuxtJS {
-        height: 28px;
+        height: 26px;
       }
     }
     &--hidden {
@@ -140,13 +152,13 @@ export default {
     }
   }
   &__Menu {
-    background: $color_vue_green;
+    background: $color_vue_blue;
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
-    z-index: 999;
+    z-index: 995;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -161,6 +173,10 @@ export default {
       position: absolute;
       top: 20px;
       right: 20px;
+      .Icon--times {
+        width: 24px;
+        height: 24px;
+      }
     }
     &__List {
       list-style: none;
@@ -171,8 +187,9 @@ export default {
         color: #fff;
         font-size: 16px;
         font-weight: 500;
+        cursor: pointer;
         letter-spacing: 0.5px;
-        text-transform: uppercase;
+        // text-transform: uppercase;
         transform: translateX(-500px);
         transition-property: transform;
         transition-duration: 0.3s;
@@ -241,6 +258,66 @@ export default {
       &:nth-child(1), &:nth-child(2) { display: none; }
     }
   }
+  &__Translations {
+    background: $color_vue_green;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%);
+    transition-property: transform;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    transition-delay: .5s;
+    &__Toggle {
+      color: #fff;
+      cursor: pointer;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      .Icon--times {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    &__List {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      &__Item {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        transform: translateX(-500px);
+        transition-property: transform;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+        &:nth-child(1) { transition-delay: 0.2s; }
+        &:nth-child(2) { transition-delay: 0.3s; }
+        &:nth-child(3) { transition-delay: 0.4s; }
+        &:nth-child(4) { transition-delay: 0.5s; }
+        &:nth-child(5) { transition-delay: 0.6s; }
+        &:nth-child(6) { transition-delay: 0.7s; }
+        &:not(:last-child) {
+          margin-bottom: 40px;
+        }
+      }
+    }
+    &--open {
+      transform: translateX(0px);
+      transition-delay: 0s;
+      .nNavbar__Translations__List__Item {
+        transform: translateX(0px);
+      }
+    }
+  }
   @media (min-width: 992px) {
     height: 72px;
     padding: 0 30px;
@@ -296,7 +373,6 @@ export default {
     }
     &__Icons {
       padding-top: 3px;
-      // justify-content: flex-start;
       &__Link {
         margin-right: 20px;
         &:nth-child(1), &:nth-child(2) {
