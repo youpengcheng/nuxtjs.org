@@ -66,10 +66,7 @@ export default {
   justify-content: center;
   align-items: center;
   transform: translateX(-100%);
-  transition-property: transform;
-  transition-duration: 1s;
-  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-  transition-delay: .5s;
+  transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1) 0.75s;
   &__Toggle {
     color: #fff;
     cursor: pointer;
@@ -93,9 +90,7 @@ export default {
       cursor: pointer;
       letter-spacing: 0.5px;
       transform: translateX(-500px);
-      transition-property: transform;
-      transition-duration: 0.3s;
-      transition-timing-function: ease-in-out;
+      transition: transform 0.5s ease-in-out;
       a {
         color: #fff;
         &:hover {
@@ -105,11 +100,11 @@ export default {
       &:hover, .nuxt-link-active {
         color: $color_vue_green;
       }
-      &:nth-child(1) { transition-delay: 0.2s; }
-      &:nth-child(2) { transition-delay: 0.3s; }
-      &:nth-child(3) { transition-delay: 0.4s; }
-      &:nth-child(4) { transition-delay: 0.5s; }
-      &:nth-child(5) { transition-delay: 0.6s; }
+      &:nth-child(1) { transition-delay: 0.1s; }
+      &:nth-child(2) { transition-delay: 0.2s; }
+      &:nth-child(3) { transition-delay: 0.3s; }
+      &:nth-child(4) { transition-delay: 0.4s; }
+      &:nth-child(5) { transition-delay: 0.5s; }
       &:not(:last-child) {
         margin-bottom: 40px;
       }

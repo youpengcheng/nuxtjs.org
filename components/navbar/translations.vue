@@ -45,10 +45,7 @@ export default {
   justify-content: center;
   align-items: center;
   transform: translateX(100%);
-  transition-property: transform;
-  transition-duration: 1s;
-  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-  transition-delay: .5s;
+  transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1) 0.75s;
   &__Toggle {
     color: #fff;
     cursor: pointer;
@@ -71,15 +68,13 @@ export default {
       font-weight: 600;
       letter-spacing: 0.5px;
       transform: translateX(1000px);
-      transition-property: transform;
-      transition-duration: 0.5s;
-      transition-timing-function: ease-in-out;
-      &:nth-child(1) { transition-delay: 0.2s; }
-      &:nth-child(2) { transition-delay: 0.3s; }
-      &:nth-child(3) { transition-delay: 0.4s; }
-      &:nth-child(4) { transition-delay: 0.5s; }
-      &:nth-child(5) { transition-delay: 0.6s; }
-      &:nth-child(6) { transition-delay: 0.7s; }
+      transition: transform 0.75s ease-in-out;
+      &:nth-child(1) { transition-delay: 0.1s; }
+      &:nth-child(2) { transition-delay: 0.2s; }
+      &:nth-child(3) { transition-delay: 0.3s; }
+      &:nth-child(4) { transition-delay: 0.4s; }
+      &:nth-child(5) { transition-delay: 0.5s; }
+      &:nth-child(6) { transition-delay: 0.6s; }
       &:not(:last-child) {
         margin-bottom: 40px;
       }
