@@ -11,7 +11,7 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  loading: { color: '#3B8070' },
+  loading: false,
   css: [
     'normalize.css',
     '@/assets/style.scss'
