@@ -26,6 +26,11 @@ export default {
     nNavbarMenu,
     nNavbarTranslations
   },
+  watch: {
+    $route: function () {
+      this.showMenu = false
+    }
+  },
   data () {
     return {
       showMenu: false,
