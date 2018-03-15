@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import nNavbar from '@/components/commons/navbar'
+import nNavbar from '@/components/navbar/index'
 
 export default {
   components: {
