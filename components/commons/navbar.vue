@@ -285,7 +285,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translateX(-100%);
+    transform: translateX(100%);
     transition-property: transform;
     transition-duration: 1s;
     transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
@@ -311,7 +311,7 @@ export default {
         font-size: 16px;
         font-weight: 600;
         letter-spacing: 0.5px;
-        transform: translateX(-500px);
+        transform: translateX(500px);
         transition-property: transform;
         transition-duration: 0.3s;
         transition-timing-function: ease-in-out;

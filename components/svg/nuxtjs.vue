@@ -16,7 +16,7 @@
 </template>
 
 <style lang="scss">
-@import '~assets/_variables';
+@import '~assets/colors';
 
 .NuxtJS {
   display: inline-block;

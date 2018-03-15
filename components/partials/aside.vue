@@ -1,5 +1,5 @@
 <template>
-  <aside class="nAside">
+  <aside class="nAside" v-if="menu">
     <div class="nAside__Group" v-for="group in menu.links" :key="group.title">
       <p>{{ group.title }}</p>
       <ul class="nAside__Group__Menu">
@@ -15,7 +15,7 @@
 export default {
   computed: {
     menu () {
-      return this.$store.getters.get('menu')[this.$route.params.section]
+      return this.$store.getters.get('menu')[this.$route.params.section] || null
     }
   }
 }
@@ -27,10 +27,9 @@ export default {
 .nAside {
   color: #fff;
   width: 100%;
-  padding: 20px 0;
+  padding-top: 30px;
   @media (min-width: 992px) {
     float: left;
-    padding: 30px 0;
     width: 240px;
   }
   &__Group {
@@ -54,27 +53,13 @@ export default {
           padding: 3px 0;
           text-decoration: none;
           color: lighten($color_vue_blue, 10%);
-          &:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0%;
-            border-bottom: 2px solid $color_vue_green;
-            transition: 0.4s;
-          }
           &:hover {
-            // color: $color_vue_green;
-            &:after {
-              width: 100%;
-            }
+            color: $color_vue_green;
           }
         }
         .nuxt-link-exact-active {
-          // color: $color_vue_green;
-          &:after {
-            width: 100%;
-          }
+          font-weight: 600;
+          color: $color_vue_green;
         }
       }
     }
