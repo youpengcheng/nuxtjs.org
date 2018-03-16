@@ -5,27 +5,29 @@
     </div>
     <ul class="nNavbar__Menu__List">
       <li class="nNavbar__Menu__List__Item">
-        <nuxt-link to="/guide">
+        <nuxt-link to="/guide" class="nNavbar__Menu__List__Item__Link">
           Guide
         </nuxt-link>
       </li>
       <li class="nNavbar__Menu__List__Item">
-        <nuxt-link to="/api">
+        <nuxt-link to="/api" class="nNavbar__Menu__List__Item__Link">
           API
         </nuxt-link>
       </li>
       <li class="nNavbar__Menu__List__Item">
-        <nuxt-link to="/resources">
+        <nuxt-link to="/resources" class="nNavbar__Menu__List__Item__Link">
           Resources
         </nuxt-link>
       </li>
       <li class="nNavbar__Menu__List__Item">
-        <nuxt-link to="/ecosystem">
+        <nuxt-link to="/ecosystem" class="nNavbar__Menu__List__Item__Link">
           Ecosystem
         </nuxt-link>
       </li>
       <li class="nNavbar__Menu__List__Item" @click="$emit('update:showTranslations', true)">
-        Translations
+        <span class="nNavbar__Menu__List__Item__Link">
+          Translations
+        </span>
       </li>
     </ul>
   </div>
@@ -85,19 +87,17 @@ export default {
     flex-direction: column;
     &__Item {
       color: #fff;
-      font-size: 16px;
-      font-weight: 500;
+      font-size: 18px;
       cursor: pointer;
-      letter-spacing: 0.5px;
       transform: translateX(-500px);
       transition: transform 0.5s ease-in-out;
-      a {
+      &__Link {
         color: #fff;
         &:hover {
           color: $color_vue_green;
         }
       }
-      &:hover, .nuxt-link-active {
+      .nuxt-link-active {
         color: $color_vue_green;
       }
       &:nth-child(1) { transition-delay: 0.1s; }
@@ -134,14 +134,12 @@ export default {
       align-items: center;
       flex-direction: row;
       &__Item {
-        // font-weight: 400;
-        font-size: 14px;
+        font-size: 15px;
         transform: none;
         padding-top: 3px;
         text-transform: none;
         cursor: pointer;
-        color: $color_vue_blue;
-        a {
+        &__Link {
           color: $color_vue_blue;
         }
         &:not(:last-child) {

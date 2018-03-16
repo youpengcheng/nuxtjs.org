@@ -64,9 +64,7 @@ export default {
     flex-direction: column;
     &__Item {
       color: #fff;
-      font-size: 16px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
+      font-size: 18px;
       transform: translateX(1000px);
       transition: transform 0.75s ease-in-out;
       &:nth-child(1) { transition-delay: 0.1s; }
@@ -77,6 +75,9 @@ export default {
       &:nth-child(6) { transition-delay: 0.6s; }
       &:not(:last-child) {
         margin-bottom: 40px;
+      }
+      &:hover {
+        color: $color_vue_blue;
       }
     }
   }

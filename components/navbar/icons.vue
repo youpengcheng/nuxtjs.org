@@ -45,7 +45,7 @@ export default {
   &__Link, &__Link:active, &__Link:visited {
     display: block;
     padding-top: 5px;
-    color: $color_vue_blue;
+    color: lighten($color_vue_blue, 10%);
     &:hover {
       color: $color_vue_green;
     }
@@ -54,7 +54,7 @@ export default {
 }
 @media (min-width: 992px) {
   .nNavbar__Icons {
-    padding-top: 3px;
+    padding-top: 2px;
     &__Link {
       margin-right: 20px;
       &:nth-child(1), &:nth-child(2) {

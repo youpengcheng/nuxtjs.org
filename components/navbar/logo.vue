@@ -51,6 +51,9 @@ export default {
     width: auto;
     flex-grow: 0;
     padding-right: 40px;
+    &__Link {
+      margin-bottom: 3px;
+    }
   }
 }
 </style>
