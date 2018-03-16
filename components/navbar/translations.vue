@@ -4,12 +4,11 @@
       <n-icon-x/>
     </div>
     <ul class="nNavbar__Translations__List">
-      <li class="nNavbar__Translations__List__Item">English</li>
-      <li class="nNavbar__Translations__List__Item">Français</li>
-      <li class="nNavbar__Translations__List__Item">English</li>
-      <li class="nNavbar__Translations__List__Item">Français</li>
-      <li class="nNavbar__Translations__List__Item">English</li>
-      <li class="nNavbar__Translations__List__Item">Français</li>
+      <li class="nNavbar__Translations__List__Item" v-for="t in translations" :key="t.locale" v-if="t.locale !== $store.getters.get('locale')">
+        <a :href="t.url" class="nNavbar__Translations__List__Item__Link">
+          {{ t.name }}
+        </a>
+      </li>
     </ul>
   </div>
 </template>
@@ -26,6 +25,19 @@ export default {
   },
   components: {
     nIconX
+  },
+  data () {
+    return {
+      translations: [
+        { locale: 'en', name: 'English', url: 'https://nuxtjs.org' },
+        { locale: 'fr', name: 'Français', url: 'https://fr.nuxtjs.org' },
+        { locale: 'id', name: 'Indonesia', url: 'https://id.nuxtjs.org' },
+        { locale: 'ja', name: '日本語', url: 'https://ja.nuxtjs.org' },
+        { locale: 'ko', name: '한국어', url: 'https://ko.nuxtjs.org' },
+        { locale: 'ru', name: 'Русский', url: 'https://ru.nuxtjs.org' },
+        { locale: 'zh', name: '中文', url: 'https://zh.nuxtjs.org' }
+      ]
+    }
   }
 }
 </script>
@@ -63,8 +75,6 @@ export default {
     display: flex;
     flex-direction: column;
     &__Item {
-      color: #fff;
-      font-size: 18px;
       transform: translateX(1000px);
       transition: transform 0.75s ease-in-out;
       &:nth-child(1) { transition-delay: 0.1s; }
@@ -76,8 +86,12 @@ export default {
       &:not(:last-child) {
         margin-bottom: 40px;
       }
-      &:hover {
-        color: $color_vue_blue;
+      &__Link {
+        font-size: 18px;
+        color: #fff;
+        &:hover {
+          color: $color_vue_blue;
+        }
       }
     }
   }
