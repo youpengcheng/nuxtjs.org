@@ -8,7 +8,9 @@
     </div>
     <div class="Navigation">
       <n-icon-bars/>
+      <n-icon-gh/>
       <n-icon-search/>
+      <n-icon-globe/>
       <n-logo/>
     </div>
     <div class="Header">
@@ -21,12 +23,16 @@
 
 <script>
 import nLogo from '~/components/svg/nuxtjs'
+import nIconGh from '@/components/icons/github'
+import nIconGlobe from '@/components/icons/globe'
 import nIconBars from '@/components/icons/bars'
 import nIconSearch from '@/components/icons/search'
 
 export default {
   components: {
     nLogo,
+    nIconGh,
+    nIconGlobe,
     nIconBars,
     nIconSearch
   }
@@ -51,11 +57,14 @@ export default {
     .Icon {
       float: left;
       color: #fff;
-      width: 32px;
-      height: 32px;
+      width: 30px;
+      height: 30px;
     }
-    .Icon--search {
+    .Icon--search, .Icon--globe {
       float: right;
+    }
+    .Icon--search, .Icon--gh {
+      margin-left: 56px;
     }
   }
   .Decoration {
@@ -72,8 +81,8 @@ export default {
     }
     .triangle--vue {
       left: 0;
-      border-right: 240px solid transparent;
-      border-top: 360px solid #42b883;
+      border-right: 200px solid transparent;
+      border-top: 300px solid #42b883;
     }
     .triangle--vue-blue {
       left: 0;
@@ -82,8 +91,8 @@ export default {
     }
     .triangle {
       right: 0;
-      border-left: 240px solid transparent;
-      border-top: 360px solid #42b883;
+      border-left: 200px solid transparent;
+      border-top: 300px solid #42b883;
     }
     .triangle--small {
       right: 0;
