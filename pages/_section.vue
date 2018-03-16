@@ -11,6 +11,7 @@ import nHeader from '~/components/partials/header.vue'
 import nNavbar from '~/components/partials/navbar.vue'
 
 export default {
+  layout: 'toto',
   components: {
     nHeader,
     nNavbar

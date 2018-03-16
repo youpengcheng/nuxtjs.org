@@ -82,23 +82,26 @@ export default {
     display: flex;
     &__Left {
       width: 300px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      padding: 0 30px;
-      padding-top: 72px;
-      overflow-y: scroll;
+      // position: fixed;
+      // top: 0;
+      // left: 0;
+      // bottom: 0;
+      // padding: 0 30px;
+      // padding-top: 72px;
+      // overflow-y: scroll;
       display: none;
-      box-shadow: 0 0 10px $color_silver inset;
-      background-color: $color_nuxt_silver;
+      // box-shadow: 0 0 10px $color_silver inset;
+      // background-color: $color_nuxt_silver;
       @media (min-width: 992px) {
         display: block;
       }
     }
     &__Right {
+      background-color: #fff;
+      box-shadow: 0 0 5px #DAE1E9;
       @media (min-width: 992px) {
-        margin: 0 300px;
+        width: 100%;
+        // margin: 0 300px;
       }
       // background-color: $color_nuxt_silver;
     }

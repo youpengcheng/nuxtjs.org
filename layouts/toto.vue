@@ -17,7 +17,29 @@
       <h1>Documentation</h1>
       <p>Description concernant la documentation</p>
     </div>
-    <nuxt/>
+    <div class="Container">
+      <nuxt/>
+    </div>
+    <div class="Footer">
+      <div class="Footer__Decoration">
+        <span class="t triangle--vue"></span>
+        <span class="t triangle--vue-blue"></span>
+        <span class="t triangle--one"></span>
+        <span class="t triangle--two"></span>
+        <span class="t triangle--three"></span>
+        <span class="t triangle--four"></span>
+        <span class="t triangle--five"></span>
+        <span class="t triangle--six"></span>
+        <span class="t triangle--seven"></span>
+        <span class="t triangle"></span>
+        <span class="t triangle--medium"></span>
+        <span class="t triangle--small"></span>
+      </div>
+      <div class="Container">
+        <h3>Title</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ipsa, accusantium quia praesentium, quo, adipisci beatae fuga accusamus sequi rem qui libero est laborum aliquam unde repellendus ducimus molestiae neque?</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -57,8 +79,13 @@ export default {
     .Icon {
       float: left;
       color: #fff;
+      opacity: .75;
       width: 30px;
       height: 30px;
+      cursor: pointer;
+      &:hover {
+        opacity: 1;
+      }
     }
     .Icon--search, .Icon--globe {
       float: right;
@@ -100,9 +127,13 @@ export default {
       border-top: 180px solid #3C8171;
     }
   }
+  .Container {
+    width: 100%;
+    padding: 40px 200px;
+  }
   .Header {
     text-align: center;
-    height: 480px;
+    height: 400px;
     padding-top: 160px;
     background-color: #fff;
     box-shadow: 0 0 5px #DAE1E9;
@@ -118,6 +149,108 @@ export default {
       font-size: 22px;
       color: #7F8C90;
       font-weight: 300;
+    }
+  }
+  .Footer {
+    position: relative;
+    margin-top: 80px;
+    background-color: #2c3e50;
+    &__Decoration {
+      .t {
+        width: 0;
+        height: 0;
+        position: absolute;
+      }
+      .triangle--vue {
+        left: 0;
+        top: -120px;
+        border-left: 80px solid transparent;
+        border-right: 80px solid transparent;
+        border-bottom: 120px solid #42b883;
+      }
+      .triangle--vue-blue {
+        left: 40px;
+        top: -60px;
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        border-bottom: 60px solid #35495e;
+      }
+      .triangle--one {
+        left: calc(33% - 40px);
+        top: -90px;
+        border-left: 60px solid transparent;
+        border-right: 60px solid transparent;
+        border-bottom: 90px solid #3C8171;
+      }
+      .triangle--two {
+        left: calc(33% - 10px);
+        top: -45px;
+        border-left: 30px solid transparent;
+        border-right: 30px solid transparent;
+        border-bottom: 45px solid #42b883;
+      }
+      .triangle--three {
+        left: calc(20% - 40px);
+        top: -60px;
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        border-bottom: 60px solid #35495e;
+      }
+      .triangle--four {
+        right: calc(33% - 40px);
+        top: -90px;
+        border-left: 60px solid transparent;
+        border-right: 60px solid transparent;
+        border-bottom: 90px solid #35495e;
+      }
+      .triangle--five {
+        right: calc(33% - 10px);
+        top: -45px;
+        border-left: 30px solid transparent;
+        border-right: 30px solid transparent;
+        border-bottom: 45px solid #3C8171;
+      }
+      .triangle--six {
+        right: calc(20% - 40px);
+        top: -60px;
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        border-bottom: 60px solid #42b883;
+      }
+      .triangle--seven {
+        right: calc(50% - 40px);
+        top: -60px;
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        border-bottom: 60px solid #3C8171;
+      }
+      .triangle {
+        right: 0;
+        top: -120px;
+        border-left: 80px solid transparent;
+        border-right: 80px solid transparent;
+        border-bottom: 120px solid #42b883;
+      }
+      .triangle--medium {
+        right: 80px;
+        top: -90px;
+        border-left: 60px solid transparent;
+        border-right: 60px solid transparent;
+        border-bottom: 90px solid #3C8171;
+      }
+      .triangle--small {
+        right: 80px;
+        top: -60px;
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        border-bottom: 60px solid #35495e;
+      }
+    }
+    h3 {
+      color: #7F8C90;
+    }
+    p {
+      color: #DAE1E9;
     }
   }
 }
