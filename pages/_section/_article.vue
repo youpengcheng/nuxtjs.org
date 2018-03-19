@@ -98,7 +98,7 @@ export default {
     }
     &__Right {
       background-color: #fff;
-      box-shadow: 0 0 5px #DAE1E9;
+      // box-shadow: 0 0 5px #DAE1E9;
       @media (min-width: 992px) {
         width: 100%;
         // margin: 0 300px;

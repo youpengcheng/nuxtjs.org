@@ -14,8 +14,15 @@
       <n-logo/>
     </div>
     <div class="Header">
-      <h1>Documentation</h1>
-      <p>Description concernant la documentation</p>
+      <div class="Container">
+        <h1>Documentation</h1>
+        <p>Description concernant la documentation</p>
+        <div class="Menu">
+          <nuxt-link class="Menu__Link" to="/prologue">Prologue</nuxt-link>
+          <nuxt-link class="Menu__Link" to="/guide">Guide</nuxt-link>
+          <nuxt-link class="Menu__Link" to="/api">Api</nuxt-link>
+        </div>
+      </div>
     </div>
     <div class="Container">
       <nuxt/>
@@ -62,6 +69,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~assets/colors';
+
 .nApp {
   width: 100%;
   overflow: hidden;
@@ -134,9 +143,9 @@ export default {
   .Header {
     text-align: center;
     height: 400px;
-    padding-top: 160px;
+    padding-top: 120px;
     background-color: #fff;
-    box-shadow: 0 0 5px #DAE1E9;
+    // box-shadow: 0 0 5px #DAE1E9;
     h1 {
       margin: 0;
       padding-bottom: 20px;
@@ -149,6 +158,41 @@ export default {
       font-size: 22px;
       color: #7F8C90;
       font-weight: 300;
+    }
+    .Menu {
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+      margin-top: 60px;
+      &__Link {
+        height: 42px;
+        min-width: 160px;
+        display: flex;
+        font-weight: 600;
+        font-size: 14px;
+        align-items: center;
+        justify-content: center;
+        color: $color_vue_silver;
+        text-transform: uppercase;
+        border: 1px solid $color_vue_silver;
+        transition: 1s color, background-color;
+        transition: color, backgroundColor 0.5s ease-in-out;
+        &:first-child {
+          border-top-left-radius: 42px;
+          border-bottom-left-radius: 42px;
+        }
+        &:last-child {
+          border-top-right-radius: 42px;
+          border-bottom-right-radius: 42px;
+        }
+        &:not(:first-child) {
+          border-left: 0px;
+        }
+      }
+      .nuxt-link-active {
+        color: #fff;
+        background-color: $color_vue_silver;
+      }
     }
   }
   .Footer {

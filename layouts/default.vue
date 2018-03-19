@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import nNavbar from '@/components/navbar/index'
+import nNavbar from '@/components/globals/topbar'
 
 export default {
   components: {
@@ -16,10 +16,10 @@ export default {
 </script>
 
 <style lang="scss">
-.nApp {
-  padding-top: 64px;
-  @media (min-width: 992px) {
-    padding-top: 72px;
-  }
-}
+// .nApp {
+//   padding-top: 64px;
+//   @media (min-width: 992px) {
+//     padding-top: 72px;
+//   }
+// }
 </style>
