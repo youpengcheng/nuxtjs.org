@@ -13,10 +13,13 @@
         <n-logo/>
       </nuxt-link>
     </div>
-    <div class="nTopbar__Button nTopbar__Button--menu"><n-icon-bars/></div>
-    <div class="nTopbar__Button nTopbar__Button--gh"><n-icon-gh/></div>
-    <div class="nTopbar__Button nTopbar__Button--lang"><n-icon-globe/></div>
-    <div class="nTopbar__Button nTopbar__Button--search"><n-icon-search/></div>
+    <div class="nTopbar__Button nTopbar__Button--menu" @click="showMenu = true"><n-icon-bars/></div>
+    <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="nTopbar__Button nTopbar__Button--gh"><n-icon-gh/></a>
+    <div class="nTopbar__Button nTopbar__Button--lang" @click="showTranslations = true"><n-icon-globe/></div>
+    <div class="nTopbar__Button nTopbar__Button--search" @click="showSearch = true"><n-icon-search/></div>
+    <n-navbar-search :visible="showSearch"/>
+    <n-navbar-menu :show-menu.sync="showMenu"/>
+    <n-navbar-translations :show-translations.sync="showTranslations"/>
   </div>
 </template>
 
@@ -26,6 +29,9 @@ import nIconGh from '@/components/icons/github'
 import nIconGlobe from '@/components/icons/globe'
 import nIconBars from '@/components/icons/bars'
 import nIconSearch from '@/components/icons/search'
+import nNavbarSearch from '~/components/topbar/search'
+import nNavbarMenu from '~/components/topbar/menu'
+import nNavbarTranslations from '~/components/topbar/translations'
 
 export default {
   components: {
@@ -33,7 +39,22 @@ export default {
     nIconGh,
     nIconGlobe,
     nIconBars,
-    nIconSearch
+    nIconSearch,
+    nNavbarSearch,
+    nNavbarMenu,
+    nNavbarTranslations
+  },
+  watch: {
+    $route: function () {
+      this.showMenu = false
+    }
+  },
+  data () {
+    return {
+      showMenu: false,
+      showTranslations: false,
+      showSearch: false
+    }
   }
 }
 </script>
@@ -78,6 +99,7 @@ export default {
     }
   }
   &__Button {
+    display: block;
     cursor: pointer;
     top: 20px;
     position: absolute;
