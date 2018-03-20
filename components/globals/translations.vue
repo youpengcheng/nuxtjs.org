@@ -1,11 +1,11 @@
 <template>
-  <div class="nTopbar__Translations" :class="{'nTopbar__Translations--open': showTranslations}">
-    <div class="nTopbar__Translations__Toggle" @click="$emit('update:showTranslations', false)">
+  <div class="nTranslations" :class="{'nTranslations--open': showTranslations}">
+    <div class="nTranslations__Toggle" @click="$emit('update:showTranslations', false)">
       <n-icon-x/>
     </div>
-    <ul class="nTopbar__Translations__List">
-      <li class="nTopbar__Translations__List__Item" v-for="t in translations" :key="t.locale" v-if="t.locale !== $store.getters.get('locale')">
-        <a :href="t.url" class="nTopbar__Translations__List__Item__Link">
+    <ul class="nTranslations__List">
+      <li class="nTranslations__List__Item" v-for="t in translations" :key="t.locale" v-if="t.locale !== $store.getters.get('locale')">
+        <a :href="t.url" class="nTranslations__List__Item__Link">
           {{ t.name }}
         </a>
       </li>
@@ -45,7 +45,7 @@ export default {
 <style lang="scss">
 @import '~assets/colors';
 
-.nTopbar__Translations {
+.nTranslations {
   background: $color_vue_green;
   position: fixed;
   top: 0;
@@ -100,7 +100,7 @@ export default {
   &--open {
     transform: translateX(0px);
     transition-delay: 0s;
-    .nTopbar__Translations__List__Item {
+    .nTranslations__List__Item {
       transform: translateX(0px);
     }
   }

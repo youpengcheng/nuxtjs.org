@@ -1,16 +1,37 @@
 <template>
   <div class="nApp">
-    <n-navbar/>
+    <n-search :show-search.sync="showSearch"/>
+    <n-menu :show-menu.sync="showMenu"/>
+    <n-translations :show-translations.sync="showTranslations"/>
+    <n-topbar :show-menu.sync="showMenu" :show-translations.sync="showTranslations" :show-search.sync="showSearch"/>
     <nuxt/>
   </div>
 </template>
 
 <script>
-import nNavbar from '@/components/topbar/index'
+import nTopbar from '@/components/globals/topbar'
+import nSearch from '~/components/globals/search'
+import nMenu from '~/components/globals/menu'
+import nTranslations from '~/components/globals/translations'
 
 export default {
   components: {
-    nNavbar
+    nTopbar,
+    nSearch,
+    nMenu,
+    nTranslations
+  },
+  watch: {
+    $route: function () {
+      this.showMenu = false
+    }
+  },
+  data () {
+    return {
+      showMenu: false,
+      showTranslations: false,
+      showSearch: false
+    }
   }
 }
 </script>

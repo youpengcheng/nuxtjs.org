@@ -1,6 +1,9 @@
 <template>
-  <div class="nTopbar__Search" :class="{'nTopbar__Search--open': visible}">
-    <input type="text" class="nTopbar__Search__Input" name="search" id="algolia" placeholder="Search"/>
+  <div class="nSearch" :class="{'nSearch--open': showSearch}">
+    <div class="nSearch__Toggle" @click="$emit('update:showSearch', false)">
+      <n-icon-x/>
+    </div>
+    <input type="text" class="nSearch__Input" name="search" id="algolia" placeholder="Search"/>
   </div>
 </template>
 
@@ -10,12 +13,17 @@ let callbacks = []
 let onScriptLoaded = (cb) => callbacks.push(cb)
 let scriptLoaded = () => callbacks.forEach((cb) => cb())
 
+import nIconX from '@/components/icons/times'
+
 export default {
   props: {
-    visible: {
+    showSearch: {
       type: Boolean,
       required: true
     }
+  },
+  components: {
+    nIconX
   },
   mounted() {
     onScriptLoaded(() => this.addInstantSearch())
@@ -51,14 +59,30 @@ export default {
 <style lang="scss">
 @import '~assets/colors';
 
-.nTopbar__Search {
-  width: 0;
-  overflow: hidden;
+.nSearch {
+  background: $color_nuxt_green;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
   display: flex;
+  justify-content: center;
   align-items: center;
-  transition-property: width, flex-grow;
-  transition-duration: 0.5s;
-  transition-timing-function: ease-in-out;
+  transform: translateX(100%);
+  transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1) 0.75s;
+  &__Toggle {
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    .Icon--times {
+      width: 32px;
+      height: 32px;
+    }
+  }
   &__Input {
     display: block;
     height: 34px;
@@ -77,23 +101,13 @@ export default {
     }
   }
   &--open {
-    flex-grow: 1;
-    width: 100%;
-    padding-left: 20px;
-    overflow: visible;
-    .nTopbar__Logo, .nTopbar__Toggle {
-      display: none;
+    transform: translateX(0px);
+    transition-delay: 0s;
+    .nSearch__List__Item {
+      transform: translateX(0px);
     }
   }
 }
 @media (min-width: 992px) {
-  .nTopbar__Search {
-    &__Input {
-      height: 40px;
-    }
-    &--open {
-      padding-left: 0;
-    }
-  }
 }
 </style>

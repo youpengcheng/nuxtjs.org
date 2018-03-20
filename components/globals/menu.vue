@@ -1,26 +1,26 @@
 <template>
-  <div class="nTopbar__Menu" :class="{'nTopbar__Menu--open': showMenu}">
-    <div class="nTopbar__Menu__Toggle" @click="$emit('update:showMenu', false)">
+  <div class="nMenu" :class="{'nMenu--open': showMenu}">
+    <div class="nMenu__Toggle" @click="$emit('update:showMenu', false)">
       <n-icon-x/>
     </div>
-    <ul class="nTopbar__Menu__List">
-      <li class="nTopbar__Menu__List__Item">
-        <nuxt-link to="/guide" class="nTopbar__Menu__List__Item__Link">
+    <ul class="nMenu__List">
+      <li class="nMenu__List__Item">
+        <nuxt-link to="/guide" class="nMenu__List__Item__Link">
           Guide
         </nuxt-link>
       </li>
-      <li class="nTopbar__Menu__List__Item">
-        <nuxt-link to="/api" class="nTopbar__Menu__List__Item__Link">
+      <li class="nMenu__List__Item">
+        <nuxt-link to="/api" class="nMenu__List__Item__Link">
           API
         </nuxt-link>
       </li>
-      <li class="nTopbar__Menu__List__Item">
-        <nuxt-link to="/resources" class="nTopbar__Menu__List__Item__Link">
+      <li class="nMenu__List__Item">
+        <nuxt-link to="/resources" class="nMenu__List__Item__Link">
           Resources
         </nuxt-link>
       </li>
-      <li class="nTopbar__Menu__List__Item">
-        <nuxt-link to="/ecosystem" class="nTopbar__Menu__List__Item__Link">
+      <li class="nMenu__List__Item">
+        <nuxt-link to="/ecosystem" class="nMenu__List__Item__Link">
           Ecosystem
         </nuxt-link>
       </li>
@@ -47,7 +47,7 @@ export default {
 <style lang="scss">
 @import '~assets/colors';
 
-.nTopbar__Menu {
+.nMenu {
   background: $color_vue_blue;
   position: fixed;
   top: 0;
@@ -106,7 +106,7 @@ export default {
   &--open {
     transform: translateX(0px);
     transition-delay: 0s;
-    .nTopbar__Menu__List__Item {
+    .nMenu__List__Item {
       transform: translateX(0px);
     }
   }
