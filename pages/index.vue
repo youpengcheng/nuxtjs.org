@@ -1,9 +1,9 @@
 <template>
   <section>
     <h3>Lang</h3>
-    <pre>{{ $store.getters.get('lang') }}</pre>
+    <!-- <pre>{{ $store.getters.get('lang') }}</pre>
     <h3>Menu</h3>
-    <pre>{{ $store.getters.get('menu') }}</pre>
+    <pre>{{ $store.getters.get('menu') }}</pre> -->
   </section>
 </template>
 

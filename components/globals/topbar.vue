@@ -1,23 +1,39 @@
 <template>
   <div class="nTopbar">
-    <!-- <div class="nTopbar__Menu">
-      <n-icon-bars/>
-    </div> -->
-    <svg class="nTopbar__Decoration">
-      <polygon class="nTopbar__Decoration__Triangle--light-green" points="0 0,200 0,0 300"/>
-      <polygon class="nTopbar__Decoration__Triangle--blue" points="0 0,120 0,0 180"/>
-      <polygon class="nTopbar__Decoration__Triangle--light-green" points="0 0,200 0,200 300"/>
-      <polygon class="nTopbar__Decoration__Triangle--green" points="0 0,120 0,120 180"/>
+    <svg class="nTopbar__Decoration nTopbar__Decoration__Left">
+      <polygon class="nTopbar__Decoration__Left--big" points="0 0,180 0,0 270"/>
+      <polygon class="nTopbar__Decoration__Left--small" points="0 0,100 0,0 150"/>
     </svg>
+    <svg class="nTopbar__Decoration nTopbar__Decoration__Right">
+      <polygon class="nTopbar__Decoration__Right--big" points="0 0,180 0,180 270"/>
+      <polygon class="nTopbar__Decoration__Right--small" points="80 0,180 0,180 150"/>
+    </svg>
+    <div class="nTopbar__Logo">
+      <nuxt-link to="/">
+        <n-logo/>
+      </nuxt-link>
+    </div>
+    <div class="nTopbar__Button nTopbar__Button--menu"><n-icon-bars/></div>
+    <div class="nTopbar__Button nTopbar__Button--gh"><n-icon-gh/></div>
+    <div class="nTopbar__Button nTopbar__Button--lang"><n-icon-globe/></div>
+    <div class="nTopbar__Button nTopbar__Button--search"><n-icon-search/></div>
   </div>
 </template>
 
 <script>
+import nLogo from '~/components/svg/nuxtjs'
+import nIconGh from '@/components/icons/github'
+import nIconGlobe from '@/components/icons/globe'
 import nIconBars from '@/components/icons/bars'
+import nIconSearch from '@/components/icons/search'
 
 export default {
   components: {
-    nIconBars
+    nLogo,
+    nIconGh,
+    nIconGlobe,
+    nIconBars,
+    nIconSearch
   }
 }
 </script>
@@ -28,40 +44,65 @@ export default {
 
 .nTopbar {
   &__Decoration {
-    width: 100%;
-    height: 300px;
-    &__Triangle {
-      &--blue {
+    width: 180px;
+    height: 270px;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+    &__Left {
+      left: 0;
+      &--small {
         fill: $color_vue_blue;
       }
-      &--green {
-        fill: $color_nuxt_green;
-      }
-      &--light-green {
+      &--big {
         fill: $color_vue_green;
       }
     }
-    // cursor: pointer;
-    // color: $color_vue_silver;
-    // fill: $color_vue_blue;
-    // width: 120px;
-    // height: 180px;
-
-    // border-right: 120px solid transparent;
-    // border-top: 180px solid #35495e;
-    // right: 0;
-    // left: 0;
-    // bottom: 0;
-    // z-index: 995;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // transform: translateX(-80%) rotate(30deg);
-    // transform: rotate(20deg) translateX(-100%);
-    // &:hover {
-    //   color: #fff;
-    //   fill: darken($color_vue_blue, 3%);
-    // }
+    &__Right {
+      right: 0;
+      &--small {
+        fill: $color_nuxt_green;
+      }
+      &--big {
+        fill: $color_vue_green;
+      }
+    }
+  }
+  &__Logo {
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a, .NuxtJS {
+      height: 32px;
+    }
+  }
+  &__Button {
+    cursor: pointer;
+    top: 20px;
+    position: absolute;
+    z-index: 10;
+    .Icon {
+      color: #fff;
+      opacity: 0.75;
+      width: 30px;
+      height: 30px;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    &--menu {
+      left: 20px;
+    }
+    &--gh {
+      left: 100px;
+    }
+    &--lang {
+      right: 100px;
+    }
+    &--search {
+      right: 20px;
+    }
   }
 }
 </style>
