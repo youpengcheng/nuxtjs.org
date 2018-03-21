@@ -1,12 +1,12 @@
 <template>
   <div class="nTopbar">
     <svg class="nTopbar__Decoration nTopbar__Decoration__Left">
-      <polygon class="nTopbar__Decoration__Left--big" points="0 0,180 0,0 270"/>
-      <polygon class="nTopbar__Decoration__Left--small" points="0 0,100 0,0 150"/>
+      <polygon class="nTopbar__Decoration__Left--a" points="0 0,180 0,0 270"/>
+      <polygon class="nTopbar__Decoration__Left--b" points="0 0,100 0,0 150"/>
     </svg>
     <svg class="nTopbar__Decoration nTopbar__Decoration__Right">
-      <polygon class="nTopbar__Decoration__Right--big" points="0 0,180 0,180 270"/>
-      <polygon class="nTopbar__Decoration__Right--small" points="80 0,180 0,180 150"/>
+      <polygon class="nTopbar__Decoration__Right--a" points="0 0,180 0,180 270"/>
+      <polygon class="nTopbar__Decoration__Right--b" points="80 0,180 0,180 150"/>
     </svg>
     <div class="nTopbar__Logo"><nuxt-link to="/"><n-logo/></nuxt-link></div>
     <div class="nTopbar__Button nTopbar__Button--menu" @click="$emit('update:showMenu', true)"><n-icon-bars/></div>
@@ -61,13 +61,13 @@ export default {
     z-index: 1;
     &__Left {
       left: 0;
-      &--small { fill: $color_vue_blue; }
-      &--big { fill: $color_vue_green; }
+      &--a { fill: $color_vue_green; }
+      &--b { fill: $color_vue_blue; }
     }
     &__Right {
       right: 0;
-      &--small { fill: $color_nuxt_green; }
-      &--big { fill: $color_vue_green; }
+      &--a { fill: $color_vue_green; }
+      &--b { fill: $color_nuxt_green; }
     }
   }
   &__Logo {

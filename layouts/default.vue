@@ -4,12 +4,17 @@
     <n-menu :show-menu.sync="showMenu"/>
     <n-translations :show-translations.sync="showTranslations"/>
     <n-topbar :show-menu.sync="showMenu" :show-translations.sync="showTranslations" :show-search.sync="showSearch"/>
+
+    <div style="height: 500px;"></div>
+
     <nuxt/>
+    <n-footer/>
   </div>
 </template>
 
 <script>
 import nTopbar from '@/components/globals/topbar'
+import nFooter from '@/components/globals/footer'
 import nSearch from '~/components/globals/search'
 import nMenu from '~/components/globals/menu'
 import nTranslations from '~/components/globals/translations'
@@ -17,6 +22,7 @@ import nTranslations from '~/components/globals/translations'
 export default {
   components: {
     nTopbar,
+    nFooter,
     nSearch,
     nMenu,
     nTranslations
