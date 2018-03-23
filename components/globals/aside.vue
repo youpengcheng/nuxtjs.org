@@ -1,8 +1,8 @@
 <template>
   <aside class="nAside" v-if="menu">
-    <div class="nAside__Group" v-for="group in menu.links" :key="group.title">
-      <p>{{ group.title }}</p>
-      <ul class="nAside__Group__Menu">
+    <div class="nAside__Group" v-for="(group, g) in menu.links" :key="group.title">
+      <p @click="current = g">{{ group.title }}</p>
+      <ul class="nAside__Group__Menu" v-show="current === g">
         <li v-for="link in group.links" :key="link.name">
           <nuxt-link :to="`/${$route.params.section}${link.to}`">{{ link.name }}</nuxt-link>
         </li>
@@ -13,6 +13,11 @@
 
 <script>
 export default {
+  data () {
+    return {
+      current: 0
+    }
+  },
   computed: {
     menu () {
       return this.$store.getters.get('menu')[this.$route.params.section] || null
@@ -22,36 +27,36 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~assets/variables';
+@import '~assets/colors';
 
 .nAside {
-  color: #fff;
   width: 100%;
-  padding-top: 30px;
   @media (min-width: 992px) {
     width: 240px;
   }
   &__Group {
     p {
+      cursor: pointer;
       font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 0.5px;
+      font-weight: 400;
+      padding: 20px 0;
       text-transform: uppercase;
-      color: lighten($color_vue_blue, 30%);
+      color: lighten($color_vue_blue, 10%);
+      border-bottom: 1px dashed rgba(0,0,0,.1);
     }
     &__Menu {
       list-style: none;
       padding: 10px 0;
       padding-bottom: 30px;
       li {
-        padding: 4px 0;
+        padding: 5px;
         a {
           position: relative;
           display: inline-block;
           font-size: 15px;
-          padding: 3px 0;
+          padding: 5px;
           text-decoration: none;
-          color: lighten($color_vue_blue, 10%);
+          color: lighten($color_vue_blue, 25%);
           &:hover {
             color: $color_vue_green;
           }

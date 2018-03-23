@@ -1,20 +1,23 @@
 <template>
   <div>
-    <!-- <n-header/> -->
-    <!-- <n-navbar/> -->
-    <nuxt-child/>
+    <n-header/>
+    <n-nav/>
+    <n-container>
+      <nuxt-child/>
+    </n-container>
   </div>
 </template>
 
 <script>
-import nHeader from '~/components/partials/header.vue'
-import nNavbar from '~/components/partials/navbar.vue'
+import nContainer from '~/components/globals/container.vue'
+import nHeader from '~/components/globals/header.vue'
+import nNav from '~/components/globals/nav.vue'
 
 export default {
-  layout: 'toto',
   components: {
+    nContainer,
     nHeader,
-    nNavbar
+    nNav
   },
   mounted () {
     this.$nextTick(() => {

@@ -12,15 +12,13 @@
 </template>
 
 <script>
-import nContainer from '~/components/globals/container.vue'
-import nAside from '~/components/partials/aside.vue'
+import nAside from '~/components/globals/aside.vue'
 import nArticle from '~/components/partials/article.vue'
 
 import { mapGetters } from 'vuex'
 
 export default {
   components: {
-    nContainer,
     nAside,
     nArticle
   },

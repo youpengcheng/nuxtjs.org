@@ -11,3 +11,5 @@ $color_vue_silver: #7F8C90;
 $color_vue_green: #42b883;
 $color_vue_blue: #35495e;
 $color_vue_black: #2c3e50;
+
+$color_soft_blue: lighten($color_vue_blue, 20%);

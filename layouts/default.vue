@@ -4,9 +4,6 @@
     <n-menu :show-menu.sync="showMenu"/>
     <n-translations :show-translations.sync="showTranslations"/>
     <n-topbar :show-menu.sync="showMenu" :show-translations.sync="showTranslations" :show-search.sync="showSearch"/>
-
-    <div style="height: 500px;"></div>
-
     <nuxt/>
     <n-footer/>
   </div>

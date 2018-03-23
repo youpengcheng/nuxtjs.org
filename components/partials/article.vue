@@ -49,7 +49,6 @@ export default {
 
 .nArticle {
   width: 100%;
-  padding: 30px;
   // @media (min-width: 992px) {
   //   max-width: 500px;
   // }

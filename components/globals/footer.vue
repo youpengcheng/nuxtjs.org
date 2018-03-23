@@ -24,6 +24,7 @@
   position: relative;
   margin-top: 80px;
   background-color: $color_vue_blue;
+  min-height: 200px;
   &__Decoration {
     &--xs {
       top: -45px;
@@ -65,9 +66,9 @@
       &:nth-child(10) { right: 0; }
       &:nth-child(11) { right: 80px; }
       &:nth-child(12) { right: 80px; }
-      &:nth-child(1), &:nth-child(4), &:nth-child(9), &:nth-child(10) { border-bottom-color: $color_vue_green; }
-      &:nth-child(2), &:nth-child(6), &:nth-child(8), &:nth-child(12) { border-bottom-color: $color_vue_blue; }
-      &:nth-child(3), &:nth-child(5), &:nth-child(7), &:nth-child(11) { border-bottom-color: $color_nuxt_green; }
+      &:nth-child(1), &:nth-child(3), &:nth-child(8), &:nth-child(10) { border-bottom-color: $color_vue_green; }
+      &:nth-child(2), &:nth-child(4), &:nth-child(6), &:nth-child(12) { border-bottom-color: $color_vue_blue; }
+      &:nth-child(5), &:nth-child(7), &:nth-child(9), &:nth-child(11) { border-bottom-color: $color_nuxt_green; }
     }
   }
 }

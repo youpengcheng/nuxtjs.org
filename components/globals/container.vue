@@ -8,8 +8,6 @@
 .nContainer {
   display: flex;
   width: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
   @media (min-width: 576px) {
     // max-width: 576px;
   }
@@ -18,10 +16,10 @@
     // padding: 0 15px;
   }
   @media (min-width: 992px) {
-    width: 992px;
+    padding: 0 180px;
   }
   @media (min-width: 1200px) {
-    width: 1200px;
+    // width: 1200px;
   }
 }
 </style>
