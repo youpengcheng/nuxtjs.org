@@ -73,6 +73,7 @@ export default {
 @import '~assets/variables';
 
 .nArea {
+  width:100%;
   display: flex;
   // background-color: $color_vue_blue;
   &__Content {
@@ -109,7 +110,7 @@ export default {
     .nArea__Content__Left {
       display: none;
     }
-    @media (min-width: 992px) {
+    @media (min-width: 1200px) {
       // background: linear-gradient(90deg, $color_vue_blue 60%, $color_nuxt_silver 61%);
       .nArea__Content__Left {
         display: block;
