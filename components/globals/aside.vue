@@ -44,14 +44,14 @@ export default {
     &__Menu {
       list-style: none;
       padding: 10px 0;
-      padding-bottom: 30px;
+      border-bottom: 1px dashed rgba(0,0,0,.1);
       li {
-        padding: 5px;
+        padding: 5px 0;
         a {
           position: relative;
           display: inline-block;
           font-size: 15px;
-          padding: 5px;
+          padding: 5px 0;
           text-decoration: none;
           color: lighten($color_vue_blue, 25%);
           &:hover {
