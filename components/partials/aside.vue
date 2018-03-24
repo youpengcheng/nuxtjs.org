@@ -28,9 +28,6 @@ export default {
   color: #fff;
   width: 100%;
   padding-top: 30px;
-  @media (min-width: 992px) {
-    width: 240px;
-  }
   &__Group {
     p {
       font-size: 14px;

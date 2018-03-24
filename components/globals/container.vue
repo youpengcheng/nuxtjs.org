@@ -12,17 +12,18 @@
   margin: 0 auto;
   @media (min-width: 576px) {
     // max-width: 576px;
-    // padding: 0 80px;
   }
   @media (min-width: 768px) {
     padding: 0;
     width: 728px;
   }
   @media (min-width: 992px) {
-  //  max-width: 992px;
+    //  max-width: 992px;
   }
   @media (min-width: 1088px) {
-    margin: 0 180px;
+    width: 100%;
+    padding: 0 180px;
+    margin: 0;
   }
   @media (min-width: 1200px) {
     // max-width: 840px;

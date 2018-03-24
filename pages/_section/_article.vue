@@ -75,53 +75,37 @@ export default {
 .nArea {
   width:100%;
   display: flex;
-  // background-color: $color_vue_blue;
   &__Content {
     width: 100%;
     display: flex;
     &__Left {
-      width: 300px;
-      // position: fixed;
-      // top: 0;
-      // left: 0;
-      // bottom: 0;
-      // padding: 0 30px;
-      // padding-top: 72px;
-      // overflow-y: scroll;
+      width: 100%;
       display: none;
-      // box-shadow: 0 0 10px $color_silver inset;
-      // background-color: $color_nuxt_silver;
       @media (min-width: 992px) {
-        display: block;
+        display: flex;
       }
     }
     &__Right {
-      background-color: #fff;
-      // box-shadow: 0 0 5px #DAE1E9;
-      @media (min-width: 992px) {
-        width: 100%;
-        // margin: 0 300px;
-      }
-      // background-color: $color_nuxt_silver;
+      width: 100%;
+      display: flex;
     }
   }
   &--splitted {
-    // background-color: $color_nuxt_silver;
+    width: 100%;
     .nArea__Content__Left {
       display: none;
     }
     @media (min-width: 1200px) {
-      // background: linear-gradient(90deg, $color_vue_blue 60%, $color_nuxt_silver 61%);
       .nArea__Content__Left {
-        display: block;
+        width: 20%;
+        min-width: 200px;
+        display: flex;
+      }
+      .nArea__Content__Right {
+        width: 75%;
+        padding-left: 40px;
       }
     }
   }
-  // @media (min-width: 992px) {
-  //   max-width: 992px;
-  // }
-  // @media (min-width: 1200px) {
-  //   max-width: 1200px;
-  // }
 }
 </style>
