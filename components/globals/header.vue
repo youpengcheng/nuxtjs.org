@@ -1,7 +1,7 @@
 <template>
   <header class="nHeader">
     <h1>Documentation</h1>
-    <p>Description concernant la documentation</p>
+    <p>Version 1.4.0</p>
   </header>
 </template>
 
