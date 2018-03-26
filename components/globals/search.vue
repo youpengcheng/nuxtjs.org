@@ -5,7 +5,8 @@
     </div>
     <n-container>
       <div class="nSearch__Content">
-        <input type="text" class="nSearch__Content__Input" name="search" id="algolia" placeholder="Search"/>
+        <h1>Search</h1>
+        <input type="text" class="nSearch__Content__Input" name="search" id="algolia" placeholder="What do you need?"/>
       </div>
     </n-container>
   </div>
@@ -18,7 +19,7 @@ let onScriptLoaded = (cb) => callbacks.push(cb)
 let scriptLoaded = () => callbacks.forEach((cb) => cb())
 
 import nIconX from '@/components/icons/times'
-import nContainer from '~/components/globals/container.vue'
+import nContainer from '@/components/globals/container.vue'
 
 export default {
   props: {
@@ -77,7 +78,7 @@ export default {
   justify-content: center;
   // align-items: center;
   transform: translateX(100%);
-  transition: transform 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1);
   &__Toggle {
     color: #fff;
     cursor: pointer;
@@ -91,6 +92,19 @@ export default {
   }
   &__Content {
     width: 100%;
+    // transform: translateX(1000px);
+    // transition: transform 0.75s ease-in-out;
+    // &:nth-child(1) { transition-delay: 0.1s; }
+    // &:nth-child(2) { transition-delay: 0.2s; }
+    h1 {
+      font-weight: 200;
+      font-size: 52px;
+      color: #fff;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      text-align: center;
+      margin: 64px 0;
+    }
     &__Input {
       display: block;
       height: 48px;
@@ -102,17 +116,17 @@ export default {
       width: 100%;
       padding: 0 20px;
       outline: none;
-      margin-top: 80px;
       &::placeholder {
         font-size: 18px;
         color: #fff;
+        // text-align: center;
       }
     }
   }
   &--open {
     transform: translateX(0px);
     transition-delay: 0s;
-    .nSearch__List__Item {
+    .nSearch__Content {
       transform: translateX(0px);
     }
   }
