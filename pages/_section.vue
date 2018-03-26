@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import nContainer from '~/components/globals/container.vue'
-import nHeader from '~/components/globals/header.vue'
-import nNav from '~/components/globals/nav.vue'
+import nContainer from '@/components/globals/container.vue'
+import nHeader from '@/components/globals/header.vue'
+import nNav from '@/components/globals/nav.vue'
 
 export default {
   components: {

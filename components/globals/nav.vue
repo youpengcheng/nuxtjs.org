@@ -22,9 +22,9 @@
     font-size: 14px;
     align-items: center;
     justify-content: center;
-    color: $color_nuxt_green;
+    color: $color_soft_blue;
     text-transform: uppercase;
-    border: 1px solid $color_nuxt_green;
+    border: 1px solid $color_soft_blue;
     transition: 1s color, background-color;
     transition: color, backgroundColor 0.5s ease-in-out;
     &:first-child {
@@ -41,7 +41,7 @@
   }
   .nuxt-link-active {
     color: #fff;
-    background-color: $color_nuxt_green;
+    background-color: $color_soft_blue;
   }
 }
 </style>

@@ -1,6 +1,7 @@
 <template>
   <header class="nHeader">
-    <h1>Documentation</h1>
+    <!-- <h1>Documentation</h1> -->
+    <h1>{{ $route.params.section }}</h1>
     <p>Version 1.4.0</p>
   </header>
 </template>
@@ -20,6 +21,7 @@
     font-size: 52px;
     line-height: 64px;
     font-weight: 200;
+    // text-transform: uppercase;
     color: #2c3e50;
   }
   p {

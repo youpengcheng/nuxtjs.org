@@ -34,10 +34,10 @@ export default {
   &__Group {
     p {
       cursor: pointer;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 400;
       padding: 20px 0;
-      text-transform: uppercase;
+      // text-transform: uppercase;
       color: lighten($color_vue_blue, 10%);
       border-bottom: 1px dashed rgba(0,0,0,.1);
     }

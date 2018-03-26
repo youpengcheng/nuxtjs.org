@@ -3,7 +3,11 @@
     <div class="nSearch__Toggle" @click="$emit('update:showSearch', false)">
       <n-icon-x/>
     </div>
-    <input type="text" class="nSearch__Input" name="search" id="algolia" placeholder="Search"/>
+    <n-container>
+      <div class="nSearch__Content">
+        <input type="text" class="nSearch__Content__Input" name="search" id="algolia" placeholder="Search"/>
+      </div>
+    </n-container>
   </div>
 </template>
 
@@ -14,6 +18,7 @@ let onScriptLoaded = (cb) => callbacks.push(cb)
 let scriptLoaded = () => callbacks.forEach((cb) => cb())
 
 import nIconX from '@/components/icons/times'
+import nContainer from '~/components/globals/container.vue'
 
 export default {
   props: {
@@ -23,7 +28,8 @@ export default {
     }
   },
   components: {
-    nIconX
+    nIconX,
+    nContainer
   },
   mounted() {
     onScriptLoaded(() => this.addInstantSearch())
@@ -69,9 +75,9 @@ export default {
   z-index: 999;
   display: flex;
   justify-content: center;
-  align-items: center;
+  // align-items: center;
   transform: translateX(100%);
-  transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1) 0.75s;
+  transition: transform 1.5s cubic-bezier(0.23, 1, 0.32, 1);
   &__Toggle {
     color: #fff;
     cursor: pointer;
@@ -83,21 +89,24 @@ export default {
       height: 32px;
     }
   }
-  &__Input {
-    display: block;
-    height: 34px;
-    font-size: 16px;
-    color: $color_vue_silver;
-    background-color: $color_nuxt_silver;
-    border: none;
-    border-radius: 34px;
-    box-shadow: 0 0 1px $color_silver inset;
+  &__Content {
     width: 100%;
-    padding: 0 17px;
-    outline: none;
-    &::placeholder {
-      font-size: 14px;
-      color: $color_vue_silver;
+    &__Input {
+      display: block;
+      height: 48px;
+      font-size: 18px;
+      color: #fff;
+      background-color: lighten($color_nuxt_green, 10%);
+      border: none;
+      border-radius: 60px;
+      width: 100%;
+      padding: 0 20px;
+      outline: none;
+      margin-top: 80px;
+      &::placeholder {
+        font-size: 18px;
+        color: #fff;
+      }
     }
   }
   &--open {

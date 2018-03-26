@@ -83,6 +83,7 @@ export default {
       display: none;
       @media (min-width: 992px) {
         display: flex;
+        // text-align: center;
       }
     }
     &__Right {
