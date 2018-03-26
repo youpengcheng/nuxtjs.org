@@ -103,7 +103,7 @@ export default {
       }
       .nArea__Content__Right {
         width: 75%;
-        padding-left: 40px;
+        padding-left: 60px;
       }
     }
   }

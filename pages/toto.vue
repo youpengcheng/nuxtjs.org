@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div class="blobs">
+    <p style="height:600px;">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, fugiat adipisci cum, perferendis impedit unde, sequi porro labore blanditiis ullam repellat perspiciatis reiciendis. Voluptas atque molestiae accusamus quod consequuntur. Ratione.
+    </p>
+    <!-- <div class="blobs">
       <div class="blob">4</div>
       <div class="blob">3</div>
       <div class="blob">2</div>
@@ -14,7 +17,8 @@
           <feBlend in="SourceGraphic" in2="goo" />
         </filter>
       </defs>
-    </svg>
+    </svg> -->
+    <!-- <n-goo/> -->
   </div>
 </template>
 

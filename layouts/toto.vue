@@ -2,18 +2,49 @@
   <div class="nApp">
     <div class="Decoration">
       <span class="t triangle--vue"></span>
-      <span class="t triangle--vue-blue"></span>
-      <span class="t triangle"></span>
+      <span class="Navigation__Circle" style="left: 100px;background-color:#42b883;">
+        <n-icon-bars/>
+      </span>
+      <!-- <span class="t triangle"></span>
       <span class="t triangle--small"></span>
+      <div class="Navigation">
+        <span class="Navigation__Circle">
+          <n-icon-bars/>
+        </span>
+        <n-icon-gh/>
+        <n-icon-search/>
+        <n-icon-globe/>
+        <n-logo/>
+      </div> -->
     </div>
-    <div class="Navigation">
-      <n-icon-bars/>
-      <n-icon-gh/>
-      <n-icon-search/>
-      <n-icon-globe/>
-      <n-logo/>
+    <div class="Decoration">
+      <!-- <span class="t triangle--vue"></span> -->
+      <span class="t triangle--vue-blue"></span>
+      <span class="Navigation__Circle">
+        <n-icon-bars/>
+      </span>
+      <!-- <span class="t triangle"></span>
+      <span class="t triangle--small"></span>
+      <div class="Navigation">
+        <span class="Navigation__Circle">
+          <n-icon-bars/>
+        </span>
+        <n-icon-gh/>
+        <n-icon-search/>
+        <n-icon-globe/>
+        <n-logo/>
+      </div> -->
     </div>
-    <div class="Header">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -9" result="goo" />
+          <feBlend in="SourceGraphic" in2="goo" />
+        </filter>
+      </defs>
+    </svg>
+    <!-- <div class="Header">
       <div class="Container">
         <h1>Documentation</h1>
         <p>Description concernant la documentation</p>
@@ -23,11 +54,11 @@
           <nuxt-link class="Menu__Link" to="/api">Api</nuxt-link>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="Container">
       <nuxt/>
     </div>
-    <div class="Footer">
+    <!-- <div class="Footer">
       <div class="Footer__Decoration">
         <span class="t triangle--vue"></span>
         <span class="t triangle--vue-blue"></span>
@@ -46,7 +77,7 @@
         <h3>Title</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ipsa, accusantium quia praesentium, quo, adipisci beatae fuga accusamus sequi rem qui libero est laborum aliquam unde repellendus ducimus molestiae neque?</p>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -74,9 +105,17 @@ export default {
 .nApp {
   width: 100%;
   overflow: hidden;
+  .Decorate {
+    z-index: 1;
+    position: absolute;
+    top : 0;
+    left: 0;
+    right: 0;
+    filter:url("#goo");
+  }
   .Navigation {
     z-index: 10;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     left: 0;
@@ -85,13 +124,23 @@ export default {
     .NuxtJS {
       height: 36px;
     }
-    .Icon {
+    &__Circle {
+      position: fixed;
+      top: 4px;
+      left: 20px;
+      width: 60px;
+      height: 60px;
+      padding-top: 17px;
+      background-color: $color_vue_blue;
+      border-radius: 64px;
+      cursor: pointer;
       float: left;
+    }
+    .Icon {
       color: #fff;
       opacity: .75;
       width: 30px;
       height: 30px;
-      cursor: pointer;
       &:hover {
         opacity: 1;
       }
@@ -109,6 +158,7 @@ export default {
     top : 0;
     left: 0;
     right: 0;
+    filter:url("#goo");
     .t {
       top: 0;
       width: 0;
