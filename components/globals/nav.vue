@@ -1,8 +1,8 @@
 <template>
   <nav class="nNav">
-    <nuxt-link class="nNav__Link" to="/prologue">Prologue</nuxt-link>
     <nuxt-link class="nNav__Link" to="/guide">Guide</nuxt-link>
     <nuxt-link class="nNav__Link" to="/api">Api</nuxt-link>
+    <nuxt-link class="nNav__Link" to="/faq">FAQ</nuxt-link>
   </nav>
 </template>
 
