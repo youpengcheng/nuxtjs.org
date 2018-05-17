@@ -22,9 +22,9 @@
 
 .nFooter {
   position: relative;
-  margin-top: 80px;
   background-color: $color_vue_blue;
   min-height: 200px;
+  z-index: 200;
   &__Decoration {
     &--xs {
       top: -45px;

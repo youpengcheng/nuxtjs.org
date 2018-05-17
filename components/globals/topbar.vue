@@ -53,6 +53,9 @@ export default {
 @import '~assets/colors';
 
 .nTopbar {
+  position: relative;
+  z-index: 100;
+  background-color: #fff;
   &__Decoration {
     width: 180px;
     height: 270px;
