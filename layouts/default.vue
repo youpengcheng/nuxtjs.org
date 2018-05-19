@@ -56,7 +56,9 @@ export default {
   border-bottom: 1px solid #DAE1E9;
 }
 .container {
-  width: 1040px;
+  display: flex;
+  width: 100%;
+  max-width: 1040px;
   margin: 0 auto;
 }
 // .nApp {
