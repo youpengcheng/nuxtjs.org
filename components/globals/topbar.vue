@@ -1,14 +1,16 @@
 <template>
   <div class="nTopbar">
     <svg class="nTopbar__Decoration nTopbar__Decoration__Left">
-      <polygon class="nTopbar__Decoration__Left--a" points="0 0,180 0,0 270"/>
-      <polygon class="nTopbar__Decoration__Left--b" points="0 0,100 0,0 150"/>
+      <polygon class="nTopbar__Decoration__Left--a" points="0 0,160 0,0 240"/>
+      <polygon class="nTopbar__Decoration__Left--b" points="0 0,80 0,0 120"/>
     </svg>
     <svg class="nTopbar__Decoration nTopbar__Decoration__Right">
-      <polygon class="nTopbar__Decoration__Right--a" points="0 0,180 0,180 270"/>
-      <polygon class="nTopbar__Decoration__Right--b" points="80 0,180 0,180 150"/>
+      <polygon class="nTopbar__Decoration__Right--a" points="0 0,160 0,160 240"/>
+      <polygon class="nTopbar__Decoration__Right--b" points="80 0,160 0,160 120"/>
     </svg>
-    <div class="nTopbar__Logo"><nuxt-link to="/"><n-logo/></nuxt-link></div>
+    <div class="container">
+      <div class="nTopbar__Logo"><nuxt-link to="/"><n-logo/></nuxt-link></div>
+    </div>
     <div class="nTopbar__Button nTopbar__Button--menu" @click="$emit('update:showMenu', true)"><n-icon-bars/></div>
     <a class="nTopbar__Button nTopbar__Button--gh" href="https://github.com/nuxt/nuxt.js" target="_blank"><n-icon-gh/></a>
     <div class="nTopbar__Button nTopbar__Button--lang" @click="$emit('update:showTranslations', true)"><n-icon-globe/></div>
@@ -57,8 +59,8 @@ export default {
   z-index: 100;
   background-color: #fff;
   &__Decoration {
-    width: 180px;
-    height: 270px;
+    width: 160px;
+    height: 240px;
     top: 0;
     position: absolute;
     z-index: 1;
@@ -76,7 +78,6 @@ export default {
   &__Logo {
     height: 64px;
     display: flex;
-    justify-content: center;
     align-items: center;
     a, .NuxtJS {
       height: 32px;
@@ -91,16 +92,16 @@ export default {
     .Icon {
       color: #fff;
       opacity: 0.75;
-      width: 30px;
-      height: 30px;
+      width: 24px;
+      height: 24px;
       &:hover {
         opacity: 1;
       }
     }
-    &--menu { left: 20px; }
-    &--gh { left: 100px; }
-    &--lang { right: 100px; }
-    &--search { right: 20px; }
+    &--menu { left: 15px; }
+    &--gh { left: 90px; }
+    &--lang { right: 90px; }
+    &--search { right: 15px; }
   }
 }
 </style>

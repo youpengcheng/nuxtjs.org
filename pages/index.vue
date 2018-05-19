@@ -1,6 +1,7 @@
 <template>
   <main class="nDoc">
     <header class="nDoc__Header">
+      <div id="codefund_ad"></div>
     </header>
     <section class="nDoc__Section">
       <div class="nDoc__Section__Bloc nDoc__Section__Bloc--left">
@@ -83,6 +84,7 @@ export default {
       }
       article {
         width: 760px;
+        padding-bottom: 128px;
       }
       &__Triangle, &__Line {
         display: block;

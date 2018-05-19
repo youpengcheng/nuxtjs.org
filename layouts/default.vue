@@ -55,6 +55,10 @@ export default {
   background-color: #fff;
   border-bottom: 1px solid #DAE1E9;
 }
+.container {
+  width: 1040px;
+  margin: 0 auto;
+}
 // .nApp {
 //   padding-top: 64px;
 //   @media (min-width: 992px) {
