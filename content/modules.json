@@ -1,0 +1,25 @@
+{
+  "metadata": {
+    "title": "NuxtJS Modules"
+  },
+  "body": [
+    {
+      "name": "Nuxt PWA",
+      "link": "https://pwa.nuxtjs.org",
+      "description": "Supercharge Nuxt with a heavily tested, updated and stable PWA solution.",
+      "official": true
+    },
+    {
+      "name": "Nuxt HTTP",
+      "link": "https://http.nuxtjs.org",
+      "description": "HTTP module for Nuxt.js provides a universal way to make HTTP requests to any API backend.",
+      "official": true
+    },
+    {
+      "name": "Nuxt Auth",
+      "link": "https://auth.nuxtjs.org",
+      "description": "Zero-boilerplate authentication support for Nuxt.js",
+      "official": true
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+<template>
+  <nui-container>
+    <div class="lg:flex">
+      <nui-aside />
+      <div class="min-h-screen w-full lg:static lg:max-h-full lg:overflow-visible lg:w-3/4">
+        <nuxt-child />
+      </div>
+    </div>
+  </nui-container>
+</template>
+
+<script>
+import nuiAside from '@/components/partials/Aside'
+
+export default {
+  components: {
+    nuiAside
+  }
+}
+</script>

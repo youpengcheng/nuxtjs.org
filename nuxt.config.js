@@ -16,6 +16,7 @@ export default {
     '~/modules/crawler/',
     '~/modules/static/',
     '~/modules/components/',
+    '~/modules/content/',
     // https://github.com/nuxt-community/netlify-files-module
     '@nuxtjs/netlify-files',
     // https://github.com/nuxt-community/style-resources-module
