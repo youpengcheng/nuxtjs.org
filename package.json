@@ -7,6 +7,8 @@
     "@nuxt/http": "^0.3.5",
     "@nuxtjs/pwa": "^3.0.0-beta.16",
     "@nuxtjs/tailwindcss": "1.1.2",
+    "@tryghost/content-api": "^1.2.9",
+    "@tryghost/helpers": "^1.1.10",
     "degit": "^2.1.4",
     "front-matter": "^3.0.2",
     "fs-extra": "^8.1.0",

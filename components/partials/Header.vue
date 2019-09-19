@@ -55,7 +55,7 @@ export default {
   },
   data () {
     return {
-      links: ['guide', 'api', 'examples', 'faq']
+      links: ['guide', 'api', 'examples', 'faq', 'blog']
     }
   }
 }
